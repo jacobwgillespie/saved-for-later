@@ -102,7 +102,7 @@ function filterNonTech(feed) {
   return clonedFeed
 }
 
-function template(items, tech = false) {
+function template(req, items, tech = false) {
   const feedTitle = `Links by Jacob RSS ${tech ? 'tech ' : ''}feed`
   const feedLink = `/${tech ? 'tech-' : ''}feed.xml`
 
@@ -110,24 +110,30 @@ function template(items, tech = false) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Links by Jacob</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="alternate" type="application/rss+xml" title="${feedTitle}" href="${feedLink}" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Links by Jacob" />
+<meta property="og:url" content="https://links.jacobwgillespie.com${req.url}" />
+<meta property="og:description" content="Starred ${tech ? 'tech ' : ''}links from my feed reader." />
+<title>${tech ? 'Tech ' : ''}Links by Jacob</title>
+<link rel="stylesheet" href="/style.css" />
+<link rel="alternate" type="application/rss+xml" title="${feedTitle}" href="${feedLink}" />
 </head>
 <body>
 <h1>${tech ? 'Tech ' : ''}Links by Jacob</h1>
 ${items
-  .map(item =>
-    `
+  .map(item => {
+    const hnLink = item.hn
+      ? `<a href="https://news.ycombinator.com/item?id=${item.hn}" target="_blank" class="hn">HN</a> `
+      : ''
+
+    return `
 <article>
 <h2><a href="${escape(item.link)}" target="_blank">${escape(item.title)}</a></h2>
-${item.hn ? `<a href="https://news.ycombinator.com/item?id=${item.hn}" target="_blank" class="hn">HN</a>` : ''}
-<time datetime="${escape(item.isoDate)}" title="${escape(item.isoDate)}">${escape(item.relativeDate)}</time>
+${hnLink}<time datetime="${escape(item.isoDate)}" title="${escape(item.isoDate)}">${escape(item.relativeDate)}</time>
 </article>
-`.trim(),
-  )
+`.trim()
+  })
   .join('\n')}
 <footer>
 <span>Copyright &copy; ${new Date().getFullYear()} <a href="https://jacobwgillespie.com" target="_blank">Jacob Gillespie</a></span> <a href="/feed.xml">RSS</a> <a href="/tech-feed.xml">RSS (Tech Only)</a>
@@ -145,11 +151,11 @@ module.exports = async (req, res) => {
   switch (req.url) {
     case '/':
       res.setHeader('Content-Type', 'text/html')
-      return send(res, 200, template(getFeedItems(starsFeed)))
+      return send(res, 200, template(req, getFeedItems(starsFeed)))
 
     case '/tech':
       res.setHeader('Content-Type', 'text/html')
-      return send(res, 200, template(getFeedItems(filterNonTech(starsFeed)), true))
+      return send(res, 200, template(req, getFeedItems(filterNonTech(starsFeed)), true))
 
     case '/tech-feed.xml':
       res.setHeader('Content-Type', 'application/rss+xml')

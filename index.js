@@ -1,16 +1,11 @@
+const {distanceInWordsToNow} = require('date-fns')
 const {send} = require('micro')
-const cldrData = require('cldr-data')
-const escape = require('escape-html')
-const Globalize = require('globalize')
+const escapeHTML = require('escape-html')
 const got = require('got')
 const handler = require('serve-handler')
 const path = require('path')
-const RelativeTime = require('relative-time').default
 const xml = require('xml-js')
 
-Globalize.load(cldrData.entireSupplemental(), cldrData.entireMainFor('en'))
-Globalize.locale('en')
-const relativeTime = new RelativeTime()
 const cache = new Map()
 
 const TECH_BLACKLIST = [
@@ -81,7 +76,7 @@ function getFeedItems(feed) {
         pubDate,
         date,
         isoDate: date.toISOString(),
-        relativeDate: relativeTime.format(date),
+        relativeDate: `${distanceInWordsToNow(date)} ago`,
         link,
         creator,
         hn,
@@ -127,11 +122,14 @@ ${items
     const hnLink = item.hn
       ? `<a href="https://news.ycombinator.com/item?id=${item.hn}" target="_blank" class="hn">HN</a> `
       : ''
+    const time = `<time datetime="${escapeHTML(item.isoDate)}" title="${escapeHTML(item.isoDate)}">${escapeHTML(
+      item.relativeDate,
+    )}</time>`
 
     return `
 <article>
-<h2><a href="${escape(item.link)}" target="_blank">${escape(item.title)}</a></h2>
-${hnLink}<time datetime="${escape(item.isoDate)}" title="${escape(item.isoDate)}">${escape(item.relativeDate)}</time>
+<h2><a href="${escapeHTML(item.link)}" target="_blank">${escapeHTML(item.title)}</a></h2>
+${hnLink}${time}
 </article>
 `.trim()
   })

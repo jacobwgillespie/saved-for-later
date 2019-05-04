@@ -13,12 +13,10 @@
     "trailingComma": "all"
   },
   "dependencies": {
-    "cldr-data": "^35.1.0",
+    "date-fns": "^1.30.1",
     "escape-html": "^1.0.3",
-    "globalize": "^1.4.2",
     "got": "^9.6.0",
     "micro": "^9.3.4",
-    "relative-time": "^1.0.0",
     "serve-handler": "^6.0.0",
     "xml-js": "^1.6.11"
   },

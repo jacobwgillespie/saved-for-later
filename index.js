@@ -1,8 +1,8 @@
 const {send} = require('micro')
 const cldrData = require('cldr-data')
 const escape = require('escape-html')
-const fetch = require('node-fetch')
 const Globalize = require('globalize')
+const got = require('got')
 const handler = require('serve-handler')
 const path = require('path')
 const RelativeTime = require('relative-time').default
@@ -11,6 +11,7 @@ const xml = require('xml-js')
 Globalize.load(cldrData.entireSupplemental(), cldrData.entireMainFor('en'))
 Globalize.locale('en')
 const relativeTime = new RelativeTime()
+const cache = new Map()
 
 const TECH_BLACKLIST = [
   'Ars Technica',
@@ -29,8 +30,8 @@ const TECH_BLACKLIST = [
 const SOURCE_FEED = 'https://feedbin.com/starred/4e98e7608d29f0b94f21a0dad25f3a7f.xml'
 
 async function getStarsFeed(req) {
-  const starsFeed = await fetch(SOURCE_FEED).then(res => res.text())
-  const feed = xml.xml2js(starsFeed)
+  const starsFeed = await got(SOURCE_FEED, {cache})
+  const feed = xml.xml2js(starsFeed.body)
 
   const rss = feed.elements[0]
   const channel = rss.elements[0]
@@ -117,7 +118,7 @@ function template(req, items, tech = false) {
 <meta property="og:description" content="Starred ${tech ? 'tech ' : ''}links from my feed reader." />
 <title>${tech ? 'Tech ' : ''}Links by Jacob</title>
 <link rel="stylesheet" href="/style.css" />
-<link rel="alternate" type="application/rss+xml" title="${feedTitle}" href="${feedLink}" />
+<link rel="alternate" type="application/atom+xml" title="${feedTitle}" href="${feedLink}" />
 </head>
 <body>
 <h1>${tech ? 'Tech ' : ''}Links by Jacob</h1>
@@ -147,23 +148,22 @@ module.exports = async (req, res) => {
   // Cache everything for 5 minutes
   res.setHeader('Cache-Control', 'private, max-age=300')
 
-  const starsFeed = await getStarsFeed(req)
   switch (req.url) {
     case '/':
       res.setHeader('Content-Type', 'text/html')
-      return send(res, 200, template(req, getFeedItems(starsFeed)))
+      return send(res, 200, template(req, getFeedItems(await getStarsFeed(req))))
 
     case '/tech':
       res.setHeader('Content-Type', 'text/html')
-      return send(res, 200, template(req, getFeedItems(filterNonTech(starsFeed)), true))
+      return send(res, 200, template(req, getFeedItems(filterNonTech(await getStarsFeed(req))), true))
 
     case '/tech-feed.xml':
-      res.setHeader('Content-Type', 'application/rss+xml')
-      return send(res, 200, xml.js2xml(filterNonTech(starsFeed)))
+      res.setHeader('Content-Type', 'application/atom+xml')
+      return send(res, 200, xml.js2xml(filterNonTech(await getStarsFeed(req))))
 
     case '/feed.xml':
-      res.setHeader('Content-Type', 'application/rss+xml')
-      return send(res, 200, xml.js2xml(starsFeed))
+      res.setHeader('Content-Type', 'application/atom+xml')
+      return send(res, 200, xml.js2xml(await getStarsFeed(req)))
 
     default:
       return handler(req, res, {public: path.join(__dirname, 'public')})

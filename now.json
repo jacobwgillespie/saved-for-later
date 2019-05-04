@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": "links.jacobwgillespie.com",
   "builds": [{"src": "index.js", "use": "now-micro", "config": {"includeFiles": ["public/**"]}}],
   "routes": [{"src": "/(.*)", "dest": "/index.js"}]
 }

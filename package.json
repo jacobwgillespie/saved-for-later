@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "micro-dev",
+    "start": "micro"
+  },
+  "main": "index.js",
+  "prettier": {
+    "bracketSpacing": false,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "cldr-data": "^35.1.0",
+    "escape-html": "^1.0.3",
+    "globalize": "^1.4.2",
+    "micro": "^9.3.4",
+    "node-fetch": "^2.5.0",
+    "relative-time": "^1.0.0",
+    "serve-handler": "^6.0.0",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0",
+    "prettier": "^1.17.0"
+  }
+}

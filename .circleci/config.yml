@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-yarn-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+            - v1-yarn-{{ checksum "package.json" }}-
+            - v1-yarn-
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-yarn-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Build
+          command: yarn build
+      - run:
+          name: Deploy
+          command: |
+            if [[ "$CIRCLE_BRANCH" == "master" ]]; then
+              yarn deploy
+            fi

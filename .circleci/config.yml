@@ -24,6 +24,5 @@ jobs:
           name: Deploy
           command: |
             if [[ "$CIRCLE_BRANCH" == "master" ]]; then
-              yarn global add @cloudflare/wrangler
               yarn deploy
             fi

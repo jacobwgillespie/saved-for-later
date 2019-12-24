@@ -13,6 +13,7 @@
     "trailingComma": "all"
   },
   "devDependencies": {
+    "@cloudflare/wrangler": "^1.6.0",
     "@types/escape-html": "^0.0.20",
     "date-fns": "^2.8.1",
     "escape-html": "^1.0.3",

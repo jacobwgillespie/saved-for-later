@@ -1,0 +1,5 @@
+name = "links"
+type = "webpack"
+account_id = "a0574295ac148c420d69da8c3420a618"
+workers_dev = true
+webpack_config = "webpack.config.js"

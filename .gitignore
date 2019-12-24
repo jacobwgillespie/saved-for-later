@@ -1,4 +1,5 @@
-dist
-node_modules
-*.log
 .env
+*.log
+/dist
+/node_modules
+/worker

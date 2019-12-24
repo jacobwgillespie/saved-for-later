@@ -2,22 +2,21 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
           keys:
-            - v1-yarn-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
-            - v1-yarn-{{ checksum "package.json" }}-
-            - v1-yarn-
+            - v2-yarn-{{ checksum "yarn.lock" }}
+            - v2-yarn-
       - run:
           name: Install dependencies
           command: yarn install
       - save_cache:
           paths:
             - node_modules
-          key: v1-yarn-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+          key: v2-yarn-{{ checksum "yarn.lock" }}
       - run:
           name: Build
           command: yarn build
@@ -25,5 +24,6 @@ jobs:
           name: Deploy
           command: |
             if [[ "$CIRCLE_BRANCH" == "master" ]]; then
+              yarn global add @cloudflare/wrangler
               yarn deploy
             fi

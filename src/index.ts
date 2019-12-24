@@ -1,13 +1,14 @@
-import {distanceInWordsToNow} from 'date-fns'
+import {formatDistanceToNow} from 'date-fns'
 import escapeHTML from 'escape-html'
+import CloudflareWorkerGlobalScope from 'types-cloudflare-worker'
 import xml from 'xml-js'
-
 import favicon from '../public/favicon.ico'
 import style from '../public/style.css'
 
-addEventListener('fetch', event => {
-  const fetchEvent = event as FetchEvent
-  fetchEvent.respondWith(handleRequest(fetchEvent.request))
+declare var self: CloudflareWorkerGlobalScope
+
+self.addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
 })
 
 async function handleRequest(request: Request) {
@@ -114,7 +115,7 @@ function getFeedItems(feed: any) {
         isoDate: date.toISOString(),
         link,
         pubDate,
-        relativeDate: `${distanceInWordsToNow(date)} ago`,
+        relativeDate: `${formatDistanceToNow(date)} ago`,
         title,
       }
     })

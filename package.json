@@ -17,6 +17,7 @@
   "devDependencies": {
     "@cloudflare/wrangler": "^1.6.0",
     "@types/escape-html": "^0.0.20",
+    "clean-css-loader": "^2.0.0",
     "dataloader": "^2.0.0",
     "date-fns": "^2.8.1",
     "dotenv": "^8.2.0",
@@ -27,6 +28,7 @@
     "ts-loader": "^6.2.1",
     "types-cloudflare-worker": "^1.1.0",
     "typescript": "^3.7.4",
+    "url-loader": "^3.0.0",
     "webpack": "^4.41.4"
   }
 }

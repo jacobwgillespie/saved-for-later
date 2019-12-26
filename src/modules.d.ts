@@ -3,7 +3,7 @@ declare module '*.css' {
   export default source
 }
 
-declare module '*.ico' {
+declare module '*.png' {
   var source: string
   export default source
 }

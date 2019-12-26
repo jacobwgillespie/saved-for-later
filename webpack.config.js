@@ -15,8 +15,12 @@ module.exports = {
         loader: 'ts-loader',
       },
       {
-        test: /\.(css|ico)$/,
-        loader: 'raw-loader',
+        test: /\.(css)$/,
+        use: ['raw-loader', {loader: 'clean-css-loader', options: {level: 2}}],
+      },
+      {
+        test: /\.(png)$/,
+        loader: 'url-loader',
       },
     ],
   },

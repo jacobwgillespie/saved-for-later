@@ -3,7 +3,7 @@ import parseISO from 'date-fns/parseISO'
 import escapeHTML from 'escape-html'
 import {Feed} from 'feed'
 import CloudflareWorkerGlobalScope from 'types-cloudflare-worker'
-import favicon from '../public/favicon.ico'
+import favicon from '../public/favicon.png'
 import style from '../public/style.css'
 import {FeedbinEntry, fetchFeedbinEntries} from './feedbin'
 
@@ -71,12 +71,6 @@ async function handleRequest(request: Request) {
         headers: {'Content-Type': 'application/json; charset=utf-8'},
       })
 
-    // Static assets
-    case '/style.css':
-      return new Response(style, {headers: {'Content-Type': 'text/css; charset=utf-8'}})
-    case '/favicon.ico':
-      return new Response(favicon, {headers: {'Content-Type': 'image/x-icon; charset=utf-8'}})
-
     // Legacy redirects
     case '/tech':
       return Response.redirect(`https://${url.hostname}/`, 301)
@@ -135,7 +129,9 @@ function template(url: string, entries: FeedbinEntry[]) {
 <meta property="og:url" content="https://links.jacobwgillespie.com${url}" />
 <meta property="og:description" content="Starred links from my feed reader." />
 <title>Links by Jacob</title>
-<link rel="stylesheet" href="/style.css" />
+<meta name="Description" content="Starred links from my feed reader." />
+<style>${style}</style>
+<link rel="shortcut icon" href="${favicon}" />
 <link rel="alternate" type="application/atom+xml" title="Links by Jacob RSS feed" href="/rss" />
 </head>
 <body>

@@ -158,6 +158,7 @@ function template(url: string, entries: FeedbinEntry[]) {
 <style>${style}</style>
 <link rel="shortcut icon" href="/icon-192x192.png" />
 <link rel="apple-touch-icon" href="/icon-192x192.png">
+<link rel="manifest" href="/manifest.json">
 <link rel="alternate" type="application/rss+xml" title="Links by Jacob RSS feed" href="/rss" />
 <link rel="alternate" type="application/atom+xml" title="Links by Jacob RSS feed" href="/atom" />
 <link rel="alternate" type="application/json" title="Links by Jacob RSS feed" href="/json" />

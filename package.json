@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "yarn build:sw && yarn build:worker",
-    "build:sw": "webpack -c webpack.sw.config.js && workbox injectManifest workbox-config.js",
+    "build:sw": "webpack --config webpack.sw.config.js && workbox injectManifest workbox-config.js",
     "build:worker": "wrangler build",
     "deploy": "./deploy.sh",
     "fmt": "prettier --write './**/*.{css,js,json,md,ts,yaml,yml}'",

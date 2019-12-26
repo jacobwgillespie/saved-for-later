@@ -5,6 +5,10 @@ module.exports = {
   mode: 'production',
   target: 'webworker',
   entry: './src/index.ts',
+  output: {
+    path: `${__dirname}/worker`,
+    filename: 'script.js',
+  },
   resolve: {
     extensions: ['.ts', '.js'],
   },

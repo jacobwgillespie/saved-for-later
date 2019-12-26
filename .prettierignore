@@ -2,5 +2,5 @@
 dist
 node_modules
 public/sw.js
+site
 worker
-workers-site

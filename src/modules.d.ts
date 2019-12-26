@@ -10,5 +10,7 @@ declare module '*.png' {
   export default source
 }
 
-// This will be populated by Webpack
+// These will be populated by Webpack
+declare const DEBUG: boolean
 declare const FEEDBIN_API_KEY: string
+declare const TWITTER_API_KEY: string

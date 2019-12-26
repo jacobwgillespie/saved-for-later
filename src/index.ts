@@ -151,6 +151,11 @@ function feedItems(entries: FeedbinEntry[]) {
 function template(url: string, entries: FeedbinEntry[]) {
   const items = feedItems(entries)
 
+  // If in debug mode, disable service worker
+  const serviceWorker = DEBUG
+    ? "if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(registrations){for(const registration of registrations){registration.unregister()}})}"
+    : "if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js')})}"
+
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -198,7 +203,7 @@ ${hnLink}${twitterLink}${time}
 <footer>
 <span>Copyright &copy; ${new Date().getFullYear()} <a href="https://jacobwgillespie.com" target="_blank" rel="noopener">Jacob Gillespie</a></span> <a href="/rss">RSS</a> <a href="/atom">Atom</a> <a href="/json">JSON</a>
 </footer>
-<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js')})}</script>
+<script>${serviceWorker}</script>
 </body>
 </html>
   `.trim()

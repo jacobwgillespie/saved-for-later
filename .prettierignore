@@ -2,5 +2,6 @@
 dist
 node_modules
 public/sw.js
+public/workbox*
 site
 worker

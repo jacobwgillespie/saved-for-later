@@ -10,7 +10,7 @@ module.exports = {
     filename: 'script.js',
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.mjs'],
   },
   module: {
     rules: [
@@ -33,7 +33,9 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
+      DEBUG: JSON.stringify(!!process.env.DEBUG),
       FEEDBIN_API_KEY: JSON.stringify(process.env.FEEDBIN_API_KEY),
+      TWITTER_API_KEY: JSON.stringify(process.env.TWITTER_API_KEY),
     }),
   ],
 }

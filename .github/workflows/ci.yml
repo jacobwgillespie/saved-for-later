@@ -30,7 +30,7 @@ jobs:
         run: |
           yarn install
           # Temporarily install from master to support Worker Sites + custom Webpack config
-          [ which wrangler ] || cargo install --git https://github.com/cloudflare/wrangler --branch master
+          which wrangler >/dev/null || cargo install --git https://github.com/cloudflare/wrangler --branch master
 
       - name: Lint
         run: yarn fmt:check

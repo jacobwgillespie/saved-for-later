@@ -2,9 +2,11 @@
   "private": true,
   "scripts": {
     "build": "wrangler build",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "fmt": "prettier --write './**/*.{css,js,json,md,ts,yaml,yml}'",
+    "fmt:check": "prettier -c './**/*.{css,js,json,md,ts,yaml,yml}'",
+    "watch": "wrangler preview --watch"
   },
-  "main": "index.js",
   "prettier": {
     "bracketSpacing": false,
     "printWidth": 120,
@@ -15,15 +17,16 @@
   "devDependencies": {
     "@cloudflare/wrangler": "^1.6.0",
     "@types/escape-html": "^0.0.20",
+    "dataloader": "^2.0.0",
     "date-fns": "^2.8.1",
+    "dotenv": "^8.2.0",
     "escape-html": "^1.0.3",
+    "feed": "^4.0.0",
     "prettier": "^1.19.1",
     "raw-loader": "^4.0.0",
     "ts-loader": "^6.2.1",
     "types-cloudflare-worker": "^1.1.0",
     "typescript": "^3.7.4",
-    "webpack": "^4.41.4",
-    "webpack-cli": "^3.3.10",
-    "xml-js": "^1.6.11"
+    "webpack": "^4.41.4"
   }
 }

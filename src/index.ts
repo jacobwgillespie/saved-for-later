@@ -71,6 +71,30 @@ async function handleRequest(request: Request) {
         headers: {'Content-Type': 'application/json; charset=utf-8'},
       })
 
+    // PWA service worker, manifest, and icon
+    case '/manifest.json':
+      return new Response(
+        JSON.stringify({
+          name: 'Links by Jacob',
+          short_name: 'Links by Jacob',
+          theme_color: '#222222',
+          background_color: '#222222',
+          display: 'minimal-ui',
+          scope: '/',
+          start_url: '/',
+          icons: [
+            {
+              src: '/icon-192x192.png',
+              sizes: '192x192',
+              type: 'image/png',
+            },
+          ],
+        }),
+        {headers: {'Content-Type': 'application/manifest+json'}},
+      )
+    case '/icon-192x192.png':
+      return new Response(favicon, {headers: {'Content-Type': 'image/png'}})
+
     // Legacy redirects
     case '/tech':
       return Response.redirect(`https://${url.hostname}/`, 301)
@@ -125,14 +149,18 @@ function template(url: string, entries: FeedbinEntry[]) {
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#222222"/>
 <meta property="og:title" content="Links by Jacob" />
 <meta property="og:url" content="https://links.jacobwgillespie.com${url}" />
 <meta property="og:description" content="Starred links from my feed reader." />
 <title>Links by Jacob</title>
 <meta name="Description" content="Starred links from my feed reader." />
 <style>${style}</style>
-<link rel="shortcut icon" href="${favicon}" />
-<link rel="alternate" type="application/atom+xml" title="Links by Jacob RSS feed" href="/rss" />
+<link rel="shortcut icon" href="/icon-192x192.png" />
+<link rel="apple-touch-icon" href="/icon-192x192.png">
+<link rel="alternate" type="application/rss+xml" title="Links by Jacob RSS feed" href="/rss" />
+<link rel="alternate" type="application/atom+xml" title="Links by Jacob RSS feed" href="/atom" />
+<link rel="alternate" type="application/json" title="Links by Jacob RSS feed" href="/json" />
 </head>
 <body>
 <h1>Links by Jacob</h1>

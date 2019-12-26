@@ -1,4 +1,9 @@
 import DataLoader from 'dataloader'
+import parseISO from 'date-fns/parseISO'
+import {FeedItem} from './feed'
+
+/** ID of the Hacker News feed in Feedbin */
+const HACKER_NEWS_FEED_ID = 10102
 
 /** Call the Feedbin API, caching responses */
 async function feedbin<APIResponse = any>(endpoint: string): Promise<APIResponse> {
@@ -20,7 +25,7 @@ async function feedbin<APIResponse = any>(endpoint: string): Promise<APIResponse
 }
 
 /** Represents a starred entry in Feedbin */
-export interface FeedbinEntry {
+interface FeedbinEntry {
   id: number
   feed_id: number
   title: string
@@ -39,18 +44,35 @@ const entryLoader = new DataLoader<number, FeedbinEntry>(
 )
 
 /** Fetch Feedbin entries */
-export async function fetchFeedbinEntries() {
+export async function fetchFeedbinEntries(): Promise<FeedItem[]> {
   // Fetch IDs of starred entries
   const entryIDs = await feedbin<number[]>('starred_entries.json')
 
   // Fetch full entries
   const entries = await Promise.all(entryIDs.map(id => entryLoader.load(id)))
 
-  // Return entries, sorted in reverse chronological order
-  return entries.sort((a, b) => {
-    if (a.published < b.published) return 1
-    if (b.published < a.published) return -1
-    return 0
+  return entries.map(entry => {
+    // Parse date
+    const date = parseISO(entry.published)
+
+    // Determine if this is a HN post
+    let hn: string | false = false
+    if (entry.feed_id === HACKER_NEWS_FEED_ID) {
+      const match = entry.content.match(/https:\/\/news\.ycombinator\.com\/item\?id=(\d+)/)
+      if (match && match[1]) {
+        hn = match[1]
+      }
+    }
+
+    return {
+      id: `https://feedbin.me/entries/${entry.id}`,
+      title: entry.title,
+      link: entry.url,
+      date,
+      content: entry.content,
+      hn,
+      twitter: false,
+    }
   })
 }
 

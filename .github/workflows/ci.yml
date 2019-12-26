@@ -21,7 +21,10 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
-        run: yarn install
+        run: |
+          yarn install
+          # Temporarily install from master to support Worker Sites + custom Webpack config
+          cargo install --git https://github.com/cloudflare/wrangler --branch master
 
       - name: Lint
         run: yarn fmt:check

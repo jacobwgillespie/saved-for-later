@@ -3,10 +3,9 @@ import parseISO from 'date-fns/parseISO'
 import escapeHTML from 'escape-html'
 import {Feed} from 'feed'
 import CloudflareWorkerGlobalScope from 'types-cloudflare-worker'
-import icon192 from '../public/icon-192x192.png'
-import icon512 from '../public/icon-512x512.png'
 import style from '../public/style.css'
 import {FeedbinEntry, fetchFeedbinEntries} from './feedbin'
+import {getAssetFromKV} from '@cloudflare/kv-asset-handler'
 
 // Loads Cloudflare Worker TypeScript types into the global scope
 declare var self: CloudflareWorkerGlobalScope
@@ -42,10 +41,11 @@ async function buildFeed() {
 }
 
 self.addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
+  event.respondWith(handleRequest(event))
 })
 
-async function handleRequest(request: Request) {
+async function handleRequest(event: FetchEvent) {
+  const request = event.request
   const url = new URL(request.url)
 
   // Remove trailing slash, if present
@@ -98,10 +98,6 @@ async function handleRequest(request: Request) {
         }),
         {headers: {'Content-Type': 'application/manifest+json'}},
       )
-    case '/icon-192x192.png':
-      return new Response(icon192, {headers: {'Content-Type': 'image/png'}})
-    case '/icon-512x512.png':
-      return new Response(icon512, {headers: {'Content-Type': 'image/png'}})
 
     // Legacy redirects
     case '/tech':
@@ -111,9 +107,13 @@ async function handleRequest(request: Request) {
     case '/tech-feed.xml':
       return Response.redirect(`https://${url.hostname}/rss`, 301)
 
-    // 404 route
+    // Catch-all route
     default:
-      return new Response('not found', {status: 404})
+      try {
+        return await getAssetFromKV(event)
+      } catch {
+        return new Response('not found', {status: 404})
+      }
   }
 }
 
@@ -198,7 +198,8 @@ ${hnLink}${twitterLink}${time}
 <footer>
 <span>Copyright &copy; ${new Date().getFullYear()} <a href="https://jacobwgillespie.com" target="_blank" rel="noopener">Jacob Gillespie</a></span> <a href="/rss">RSS</a> <a href="/atom">Atom</a> <a href="/json">JSON</a>
 </footer>
-<body>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js')})}</script>
+</body>
 </html>
   `.trim()
 }

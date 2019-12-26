@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "wrangler build",
+    "build": "yarn build:sw && yarn build:worker",
+    "build:sw": "webpack -c webpack.sw.config.js && workbox injectManifest workbox-config.js",
+    "build:worker": "wrangler build",
     "deploy": "./deploy.sh",
     "fmt": "prettier --write './**/*.{css,js,json,md,ts,yaml,yml}'",
     "fmt:check": "prettier -c './**/*.{css,js,json,md,ts,yaml,yml}'",
@@ -15,8 +17,9 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "@cloudflare/wrangler": "^1.6.0",
+    "@cloudflare/kv-asset-handler": "^0.0.7",
     "@types/escape-html": "^0.0.20",
+    "@types/workbox-sw": "^4.3.0",
     "clean-css-loader": "^2.0.0",
     "dataloader": "^2.0.0",
     "date-fns": "^2.8.1",
@@ -29,6 +32,9 @@
     "types-cloudflare-worker": "^1.1.0",
     "typescript": "^3.7.4",
     "url-loader": "^3.0.0",
-    "webpack": "^4.41.4"
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "workbox-cli": "^4.3.1",
+    "workbox-sw": "^4.3.1"
   }
 }

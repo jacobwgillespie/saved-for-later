@@ -1,4 +1,6 @@
 .vscode
 dist
 node_modules
+public/sw.js
 worker
+workers-site

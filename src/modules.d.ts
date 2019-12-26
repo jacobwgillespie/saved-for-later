@@ -1,3 +1,5 @@
+declare module '@cloudflare/kv-asset-handler'
+
 declare module '*.css' {
   var source: string
   export default source

@@ -3,7 +3,8 @@ import parseISO from 'date-fns/parseISO'
 import escapeHTML from 'escape-html'
 import {Feed} from 'feed'
 import CloudflareWorkerGlobalScope from 'types-cloudflare-worker'
-import favicon from '../public/favicon.png'
+import icon192 from '../public/icon-192x192.png'
+import icon512 from '../public/icon-512x512.png'
 import style from '../public/style.css'
 import {FeedbinEntry, fetchFeedbinEntries} from './feedbin'
 
@@ -88,12 +89,19 @@ async function handleRequest(request: Request) {
               sizes: '192x192',
               type: 'image/png',
             },
+            {
+              src: '/icon-512x512.png',
+              sizes: '512x512',
+              type: 'image/png',
+            },
           ],
         }),
         {headers: {'Content-Type': 'application/manifest+json'}},
       )
     case '/icon-192x192.png':
-      return new Response(favicon, {headers: {'Content-Type': 'image/png'}})
+      return new Response(icon192, {headers: {'Content-Type': 'image/png'}})
+    case '/icon-512x512.png':
+      return new Response(icon512, {headers: {'Content-Type': 'image/png'}})
 
     // Legacy redirects
     case '/tech':

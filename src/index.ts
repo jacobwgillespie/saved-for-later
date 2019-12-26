@@ -72,33 +72,6 @@ async function handleRequest(event: FetchEvent) {
         headers: {'Content-Type': 'application/json; charset=utf-8'},
       })
 
-    // PWA service worker, manifest, and icon
-    case '/manifest.json':
-      return new Response(
-        JSON.stringify({
-          name: 'Links by Jacob',
-          short_name: 'Links by Jacob',
-          theme_color: '#222222',
-          background_color: '#222222',
-          display: 'minimal-ui',
-          scope: '/',
-          start_url: '/',
-          icons: [
-            {
-              src: '/icon-192x192.png',
-              sizes: '192x192',
-              type: 'image/png',
-            },
-            {
-              src: '/icon-512x512.png',
-              sizes: '512x512',
-              type: 'image/png',
-            },
-          ],
-        }),
-        {headers: {'Content-Type': 'application/manifest+json'}},
-      )
-
     // Legacy redirects
     case '/tech':
       return Response.redirect(`https://${url.hostname}/`, 301)

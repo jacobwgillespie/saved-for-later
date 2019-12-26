@@ -1,0 +1,21 @@
+{
+  "name": "Links by Jacob",
+  "short_name": "Links by Jacob",
+  "theme_color": "#222222",
+  "background_color": "#222222",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

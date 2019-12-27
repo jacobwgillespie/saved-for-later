@@ -5,7 +5,7 @@ import {FeedItem} from './feed'
 const allEmojiRegex = emojiRegex()
 
 /** Call the Twitter API, caching responses */
-async function twitter<APIResponse = any>(endpoint: string): Promise<APIResponse> {
+async function twitter(endpoint: string): Promise<TwitterFavorite[]> {
   const url = `https://api.twitter.com/1.1/${endpoint}`
 
   // Return the cached response if present
@@ -19,6 +19,9 @@ async function twitter<APIResponse = any>(endpoint: string): Promise<APIResponse
   const result = await response.json()
 
   // Store in the cache
+  if (!Array.isArray(result)) {
+    throw new Error('Twitter API error')
+  }
   await CACHE_KV.put(url, JSON.stringify(result), {expirationTtl: 60})
   return result
 }
@@ -120,9 +123,7 @@ function buildTweetTitle(tweet: TwitterFavorite): string {
 
 /** Fetch Twitter favorites as feed items */
 export async function fetchFavorites(): Promise<FeedItem[]> {
-  const favorites = await twitter<TwitterFavorite[]>(
-    'favorites/list.json?screen_name=jacobwgillespie&count=200&tweet_mode=extended',
-  )
+  const favorites = await twitter('favorites/list.json?screen_name=jacobwgillespie&count=200&tweet_mode=extended')
 
   return Promise.all(
     favorites.map(async favorite => {

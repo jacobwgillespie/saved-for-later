@@ -1,24 +1,26 @@
 import parse from 'date-fns/parse'
+import emojiRegex from 'emoji-regex'
 import {FeedItem} from './feed'
-import favoritesMock from './favorites.json'
+
+const allEmojiRegex = emojiRegex()
 
 /** Call the Twitter API, caching responses */
 async function twitter<APIResponse = any>(endpoint: string): Promise<APIResponse> {
-  const cache = caches.default
   const url = `https://api.twitter.com/1.1/${endpoint}`
 
   // Return the cached response if present
-  const cachedResponse = await cache.match(url)
-  if (cachedResponse !== undefined) {
-    return await cachedResponse.json()
+  const cachedResponse = await CACHE_KV.get(url, 'json')
+  if (cachedResponse) {
+    return cachedResponse
   }
 
   // Fetch the response from the API
-  const response = await fetch(url, {
-    headers: {Authorization: `bearer ${TWITTER_API_KEY}`},
-  })
-  await cache.put(url, response.clone())
-  return response.json()
+  const response = await fetch(url, {headers: {Authorization: `bearer ${TWITTER_API_KEY}`}})
+  const result = await response.json()
+
+  // Store in the cache
+  await CACHE_KV.put(url, JSON.stringify(result), {expirationTtl: 60})
+  return result
 }
 
 interface TwitterFavorite {
@@ -29,15 +31,18 @@ interface TwitterFavorite {
     id_str: string
     screen_name: string
   }
+  in_reply_to_screen_name: string | null
   entities: {
     urls: {
       url: string
       expanded_url: string
+      display_url: string
       indices: [number, number]
     }[]
     media?: {
       url: string
       expanded_url: string
+      display_url: string
       indices: [number, number]
     }[]
   }
@@ -73,47 +78,85 @@ function buildTweetTitle(tweet: TwitterFavorite): string {
   // Take first line of the tweet
   title = title.split('\n')[0]
 
-  title = title.split(/[.?!]/)[0]
+  // Take first sentence
+  title = title.split(/[.?!](?=(\s|$))/)[0]
 
   // Remove trailing placeholders
   for (const [idx] of entities.reverse().entries()) {
     const placeholder = buildPlaceholder(entities.length - idx - 1)
     title = title.replace(new RegExp(`${placeholder} via @[a-zA-Z0-9_]+$`), '').trim()
     title = title.replace(new RegExp(`${placeholder}$`), '').trim()
+    if (title === '') {
+      title = placeholder
+    }
   }
 
+  // Remove trailing punctuation
   title = title.replace(/[:;,]$/, '')
+
+  // Replace placeholders with display URLs
+  for (const [idx, entity] of entities.entries()) {
+    title = title.replace(buildPlaceholder(idx), entity.display_url)
+  }
+
+  // Remove @-mention at the beginning of the line
+  if (tweet.in_reply_to_screen_name) {
+    title = title.replace(new RegExp(`^@${tweet.in_reply_to_screen_name}`), '').trim()
+  }
+
+  // Strip emoji
+  title = title.replace(allEmojiRegex, '')
+
+  // Fix instances of html encoding, which get double-escaped
+  title = title
+    .replace(/&amp;/g, '&')
+    .replace(/&gt;/g, '>')
+    .replace(/&lt;/g, '<')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
 
   return title
 }
 
 /** Fetch Twitter favorites as feed items */
 export async function fetchFavorites(): Promise<FeedItem[]> {
-  const favorites: TwitterFavorite[] = DEBUG
-    ? favoritesMock
-    : await twitter<TwitterFavorite[]>('favorites/list.json?screen_name=jacobwgillespie&count=200&tweet_mode=extended')
+  const favorites = await twitter<TwitterFavorite[]>(
+    'favorites/list.json?screen_name=jacobwgillespie&count=200&tweet_mode=extended',
+  )
 
-  return favorites.map(favorite => {
-    // Parse date
-    const date = parseTwitterDate(favorite.created_at)
+  return Promise.all(
+    favorites.map(async favorite => {
+      const cacheKey = `v1-twitter-item-${favorite.id_str}`
+      const cachedItem = await CACHE_KV.get(cacheKey, 'json')
+      if (cachedItem) {
+        return cachedItem
+      }
 
-    // Resolve link
-    const tweetLink = `https://twitter.com/${favorite.user.screen_name}/status/${favorite.id_str}`
-    const firstURL = favorite.entities.urls.length ? favorite.entities.urls[0] : undefined
-    const link = firstURL ? firstURL.expanded_url : tweetLink
+      // Parse date
+      const date = parseTwitterDate(favorite.created_at).toISOString()
 
-    // Construct title from first line of tweet, cleaning up trailing URLs or punctuation
-    let title = buildTweetTitle(favorite)
+      // Resolve link
+      const tweetLink = `https://twitter.com/${favorite.user.screen_name}/status/${favorite.id_str}`
+      const firstURL = favorite.entities.urls.length ? favorite.entities.urls[0] : undefined
+      const link = firstURL ? firstURL.expanded_url : tweetLink
 
-    return {
-      id: tweetLink,
-      title,
-      link,
-      date,
-      content: favorite.full_text,
-      hn: false,
-      twitter: tweetLink,
-      twitterUsername: favorite.user.screen_name,
-    }
-  })
+      // Construct title from first line of tweet, cleaning up trailing URLs or punctuation
+      let title = buildTweetTitle(favorite)
+
+      const feedItem: FeedItem = {
+        id: tweetLink,
+        title,
+        link,
+        date,
+        content: favorite.full_text,
+        hn: false,
+        twitter: tweetLink,
+        twitterUsername: favorite.user.screen_name,
+      }
+
+      await CACHE_KV.put(cacheKey, JSON.stringify(feedItem))
+
+      return feedItem
+    }),
+  )
 }

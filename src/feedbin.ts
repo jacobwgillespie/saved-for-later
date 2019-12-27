@@ -1,5 +1,4 @@
 import DataLoader from 'dataloader'
-import parseISO from 'date-fns/parseISO'
 import {FeedItem} from './feed'
 
 /** ID of the Hacker News feed in Feedbin */
@@ -52,9 +51,6 @@ export async function fetchFeedbinEntries(): Promise<FeedItem[]> {
   const entries = await Promise.all(entryIDs.map(id => entryLoader.load(id)))
 
   return entries.map(entry => {
-    // Parse date
-    const date = parseISO(entry.published)
-
     // Determine if this is a HN post
     let hn: string | false = false
     if (entry.feed_id === HACKER_NEWS_FEED_ID) {
@@ -68,7 +64,7 @@ export async function fetchFeedbinEntries(): Promise<FeedItem[]> {
       id: `https://feedbin.me/entries/${entry.id}`,
       title: entry.title,
       link: entry.url,
-      date,
+      date: entry.published,
       content: entry.content,
       hn,
       twitter: false,

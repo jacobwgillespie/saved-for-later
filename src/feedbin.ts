@@ -67,7 +67,6 @@ export async function fetchFeedbinEntries(): Promise<FeedItem[]> {
       date: entry.published,
       content: entry.content,
       hn,
-      twitter: false,
     }
   })
 }

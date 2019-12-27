@@ -12,8 +12,10 @@ export interface FeedItem {
   date: string
   content?: string
   hn: string | false
-  twitter: string | false
-  twitterUsername?: string
+  twitter?: {
+    link: string
+    username: string
+  }
 }
 
 // const API_HOSTNAME = 'https://links.jacobwgillespie.workers.dev'

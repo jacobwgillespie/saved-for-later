@@ -121,6 +121,25 @@ function buildTweetTitle(tweet: TwitterFavorite): string {
   return title
 }
 
+function renderContent(tweet: TwitterFavorite): string {
+  let content = tweet.full_text
+
+  // Build sorted list of entities (URLs)
+  const entities = [...tweet.entities.urls, ...(tweet.entities.media || [])].sort((a, b) => {
+    if (a.indices[0] < b.indices[0]) return -1
+    if (a.indices[0] > b.indices[0]) return 1
+    return 0
+  })
+
+  for (const entity of entities) {
+    content = content.replace(entity.url, `<a href="${entity.expanded_url}">${entity.display_url}</a>`)
+  }
+
+  content = `${content} — <a href="https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}">Tweet</a>`
+
+  return content
+}
+
 /** Fetch Twitter favorites as feed items */
 export async function fetchFavorites(): Promise<FeedItem[]> {
   const favorites = await twitter('favorites/list.json?screen_name=jacobwgillespie&count=200&tweet_mode=extended')
@@ -149,10 +168,12 @@ export async function fetchFavorites(): Promise<FeedItem[]> {
         title,
         link,
         date,
-        content: favorite.full_text,
+        content: renderContent(favorite),
         hn: false,
-        twitter: tweetLink,
-        twitterUsername: favorite.user.screen_name,
+        twitter: {
+          link: tweetLink,
+          username: favorite.user.screen_name,
+        },
       }
 
       await CACHE_KV.put(cacheKey, JSON.stringify(feedItem))

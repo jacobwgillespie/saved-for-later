@@ -32,7 +32,7 @@ _Saved for Later_ is comprised of three components:
 
 The **static site generator** reads from the Feedbin API and Twitter API to retrieve starred and favorited items, respectively, and generates static assets for the homepage HTML and feed files.
 
-The **service worker** is a special JavaScript asset that is installed in the browser and is responsible for maintaining an offline cache of the contents of the site. This provides near-instant load times when visiting the site, and is also responsible for the plumbing required to support installing _Saved for Later_ as a progressive web app (PWA).
+The **service worker** is a special JavaScript asset that is installed in the browser and is responsible for maintaining an offline cache of the contents of the site. This provides near-instant load times when visiting the site, and is also responsible for the plumbing required to support installing _Saved for Later_ as a progressive web app (PWA). The service worker also updates the site in the background, prompting for refresh if a new copy of the homepage is found.
 
 Finally, the **Cloudflare worker** is responsible for serving the static site and service worker via Cloudflare's [Workers Sites](https://workers.cloudflare.com/sites/). This worker is also responsible for handling redirects and clean URL routing.
 

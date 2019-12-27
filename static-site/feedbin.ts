@@ -1,25 +1,16 @@
 import DataLoader from 'dataloader'
 import {FeedItem} from './feed'
+import fetch from 'node-fetch'
 
 /** ID of the Hacker News feed in Feedbin */
 const HACKER_NEWS_FEED_ID = 10102
 
-/** Call the Feedbin API, caching responses */
+/** Call the Feedbin API */
 async function feedbin<APIResponse = any>(endpoint: string): Promise<APIResponse> {
-  const cache = caches.default
   const url = `https://api.feedbin.com/v2/${endpoint}`
-
-  // Return the cached response if present
-  const cachedResponse = await cache.match(url)
-  if (cachedResponse !== undefined) {
-    return await cachedResponse.json()
-  }
-
-  // Fetch the response from the API
   const response = await fetch(url, {
-    headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`},
+    headers: {Authorization: `Basic ${process.env.FEEDBIN_API_KEY}`},
   })
-  await cache.put(url, response.clone())
   return response.json()
 }
 

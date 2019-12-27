@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#222222" />
+<meta property="og:title" content="Links by Jacob" />
+<meta property="og:url" content="https://links.jacobwgillespie.com/" />
+<meta property="og:description" content="Starred links from my feed reader." />
+<title>Links by Jacob</title>
+<meta name="Description" content="Starred links from my feed reader." />
+STYLE
+<link rel="shortcut icon" href="/icon-192x192.png" />
+<link rel="apple-touch-icon" href="/icon-192x192.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="alternate" type="application/rss+xml" title="Links by Jacob RSS feed" href="/rss" />
+<link rel="alternate" type="application/atom+xml" title="Links by Jacob RSS feed" href="/atom" />
+<link rel="alternate" type="application/json" title="Links by Jacob RSS feed" href="/json" />
+</head>
+<body>
+<div id="new" aria-hidden="true">New content available, <a href="/">refresh now</a></div>
+<h1><a href="/">Links by Jacob</a></h1>
+ITEMS
+<footer><span>Copyright &copy; YEAR <a href="https://jacobwgillespie.com" target="_blank" rel="noopener">Jacob Gillespie</a></span> <a href="/rss">RSS</a> <a href="/atom">Atom</a> <a href="/json">JSON</a></footer>
+<script type="module">
+import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs'
+
+if ('serviceWorker' in navigator) {
+  const wb = new Workbox('/sw.js')
+  wb.addEventListener('activated', event => {
+    const banner = document.getElementById('new')
+    banner.setAttribute('aria-hidden', 'false')
+    banner.classList.add('visible')
+  })
+  wb.register()
+}
+</script>
+</body>
+</html>

@@ -1,28 +1,18 @@
 import parse from 'date-fns/parse'
 import emojiRegex from 'emoji-regex'
 import {FeedItem} from './feed'
+import fetch from 'node-fetch'
 
 const allEmojiRegex = emojiRegex()
 
 /** Call the Twitter API, caching responses */
 async function twitter(endpoint: string): Promise<TwitterFavorite[]> {
   const url = `https://api.twitter.com/1.1/${endpoint}`
-
-  // Return the cached response if present
-  const cachedResponse = await CACHE_KV.get(url, 'json')
-  if (cachedResponse) {
-    return cachedResponse
-  }
-
-  // Fetch the response from the API
-  const response = await fetch(url, {headers: {Authorization: `bearer ${TWITTER_API_KEY}`}})
+  const response = await fetch(url, {headers: {Authorization: `bearer ${process.env.TWITTER_API_KEY}`}})
   const result = await response.json()
-
-  // Store in the cache
   if (!Array.isArray(result)) {
     throw new Error('Twitter API error')
   }
-  await CACHE_KV.put(url, JSON.stringify(result), {expirationTtl: 60})
   return result
 }
 
@@ -145,40 +135,32 @@ export async function fetchFavorites(): Promise<FeedItem[]> {
   const favorites = await twitter('favorites/list.json?screen_name=jacobwgillespie&count=200&tweet_mode=extended')
 
   return Promise.all(
-    favorites.map(async favorite => {
-      const cacheKey = `v1-twitter-item-${favorite.id_str}`
-      const cachedItem = await CACHE_KV.get(cacheKey, 'json')
-      if (cachedItem) {
-        return cachedItem
-      }
+    favorites.map(
+      async (favorite): Promise<FeedItem> => {
+        // Parse date
+        const date = parseTwitterDate(favorite.created_at).toISOString()
 
-      // Parse date
-      const date = parseTwitterDate(favorite.created_at).toISOString()
+        // Resolve link
+        const tweetLink = `https://twitter.com/${favorite.user.screen_name}/status/${favorite.id_str}`
+        const firstURL = favorite.entities.urls.length ? favorite.entities.urls[0] : undefined
+        const link = firstURL ? firstURL.expanded_url : tweetLink
 
-      // Resolve link
-      const tweetLink = `https://twitter.com/${favorite.user.screen_name}/status/${favorite.id_str}`
-      const firstURL = favorite.entities.urls.length ? favorite.entities.urls[0] : undefined
-      const link = firstURL ? firstURL.expanded_url : tweetLink
+        // Construct title from first line of tweet, cleaning up trailing URLs or punctuation
+        let title = buildTweetTitle(favorite)
 
-      // Construct title from first line of tweet, cleaning up trailing URLs or punctuation
-      let title = buildTweetTitle(favorite)
-
-      const feedItem: FeedItem = {
-        id: tweetLink,
-        title,
-        link,
-        date,
-        content: renderContent(favorite),
-        hn: false,
-        twitter: {
-          link: tweetLink,
-          username: favorite.user.screen_name,
-        },
-      }
-
-      await CACHE_KV.put(cacheKey, JSON.stringify(feedItem))
-
-      return feedItem
-    }),
+        return {
+          id: tweetLink,
+          title,
+          link,
+          date,
+          content: renderContent(favorite),
+          hn: false,
+          twitter: {
+            link: tweetLink,
+            username: favorite.user.screen_name,
+          },
+        }
+      },
+    ),
   )
 }

@@ -1,0 +1,56 @@
+import 'dotenv/config'
+
+import {formatDistanceToNow, parseISO} from 'date-fns'
+import escapeHTML from 'escape-html'
+import fs from 'fs'
+import {fetchFeedItems, buildFeed} from './feed'
+
+const template = fs.readFileSync('static-site/template.html').toString('utf8')
+const style = fs.readFileSync('static-site/style.css').toString('utf8')
+
+export async function build() {
+  const items = await fetchFeedItems()
+
+  const itemsHTML: string[] = []
+
+  for (const item of items) {
+    const isoDate = item.date
+    const relativeDate = `${formatDistanceToNow(parseISO(item.date))} ago`
+
+    const hnLink = item.hn
+      ? `<a href="https://news.ycombinator.com/item?id=${item.hn}" target="_blank" rel="noopener" class="hn">HN</a> `
+      : ''
+
+    const twitterLink = item.twitter
+      ? `<a href="${escapeHTML(item.twitter.link)}" target="_blank" rel="noopener" class="tw">${
+          item.twitter.username
+        }</a> `
+      : ''
+
+    itemsHTML.push(
+      `
+<article>
+<a href="${escapeHTML(item.link)}" target="_blank" rel="noopener"><h2>${escapeHTML(item.title)}</h2></a>
+${hnLink}
+${twitterLink}
+<time datetime="${escapeHTML(isoDate)}" title="${escapeHTML(isoDate)}">${escapeHTML(relativeDate)}</time>
+</article>
+  `.trim(),
+    )
+  }
+
+  const indexHTML = template
+    .replace('YEAR', new Date().getFullYear().toString())
+    // .replace('SERVICE_WORKER', serviceWorker)
+    .replace('STYLE', `<style>${style}</style>`)
+    .replace('ITEMS', itemsHTML.join('\n'))
+
+  fs.writeFileSync('public/index.html', indexHTML)
+
+  const feed = await buildFeed(items)
+  fs.writeFileSync('public/atom.xml', feed.atom1())
+  fs.writeFileSync('public/feed.json', feed.json1())
+  fs.writeFileSync('public/rss.xml', feed.rss2())
+}
+
+build()

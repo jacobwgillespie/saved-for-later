@@ -1,9 +1,10 @@
 .env
-.vscode
 *.log
-/dist
+/.vscode
 /node_modules
-/public/sw.js
-/public/workbox*
+/public/*.html
+/public/*.js
+/public/*.json
+/public/*.xml
 /site
 /worker

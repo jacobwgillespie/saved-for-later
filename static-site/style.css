@@ -39,9 +39,9 @@ a.tw {
 }
 
 h1 {
-  margin-bottom: 21px;
-  font-weight: 300;
   font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 21px;
 }
 
 h1 a:visited {
@@ -49,8 +49,8 @@ h1 a:visited {
 }
 
 article {
-  display: flex;
   align-items: baseline;
+  display: flex;
   margin-bottom: 21px;
 }
 

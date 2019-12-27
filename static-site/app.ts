@@ -4,7 +4,10 @@ function updateTimeElements() {
   const timeElements = document.getElementsByTagName('time')
   for (const element of Array.from(timeElements)) {
     const isoDate = element.getAttribute('datetime') || ''
-    element.innerText = `${formatDistanceToNow(parseISO(isoDate))} ago`
+    const formattedDate = `${formatDistanceToNow(parseISO(isoDate))} ago`
+    if (element.innerText !== formattedDate) {
+      element.innerText = formattedDate
+    }
   }
 }
 

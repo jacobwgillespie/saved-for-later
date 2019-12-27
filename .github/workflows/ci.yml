@@ -45,3 +45,4 @@ jobs:
           CF_EMAIL: ${{ secrets.CF_EMAIL }}
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           FEEDBIN_API_KEY: ${{ secrets.FEEDBIN_API_KEY }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}

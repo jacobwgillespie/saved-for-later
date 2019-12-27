@@ -33,6 +33,11 @@ async function handleRequest(event: FetchEvent) {
   const request = event.request
   const url = new URL(request.url)
 
+  if (url.hostname === 'links.jacobwgillespie.com') {
+    url.hostname = 'savedforlater.dev'
+    return Response.redirect(url.href, 301)
+  }
+
   // Remove trailing slash, if present
   const pathname = url.pathname.endsWith('/') && url.pathname != '/' ? url.pathname.slice(0, -1) : url.pathname
 

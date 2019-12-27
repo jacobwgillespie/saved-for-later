@@ -33,13 +33,6 @@ a.hn {
 
 a.tw {
   color: #1da1f2;
-  display: inline-flex;
-}
-
-a.tw svg {
-  fill: #1da1f2;
-  height: 18px;
-  width: 18px;
 }
 
 h1 {

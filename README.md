@@ -1,3 +1,5 @@
-# 🕸️ Links by Jacob [![Build Status](https://github.com/jacobwgillespie/links-by-jacob/workflows/CI/badge.svg)](https://github.com/jacobwgillespie/links-by-jacob/actions)
+# 🕸️ Saved for Later [![Build Status](https://github.com/jacobwgillespie/saved-for-later/workflows/CI/badge.svg)](https://github.com/jacobwgillespie/saved-for-later/actions)
 
-[https://links.jacobwgillespie.com](https://links.jacobwgillespie.com)
+> a linkblog from Jacob
+
+[https://savedforlater.dev](https://savedforlater.dev)

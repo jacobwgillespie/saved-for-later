@@ -32,13 +32,13 @@ export async function fetchFeedItems() {
 
 export async function buildFeed(items: FeedItem[]) {
   const feed = new Feed({
-    title: 'Links by Jacob',
-    id: 'https://links.jacobwgillespie.com/feed.xml',
+    title: 'Saved for Later',
+    id: 'https://savedforlater.dev/feed.xml',
     copyright: '',
-    generator: 'https://github.com/jacobwgillespie/links-by-jacob',
+    generator: 'https://github.com/jacobwgillespie/saved-for-later',
     feedLinks: {
-      atom: 'https://links.jacobwgillespie.com/atom',
-      json: 'https://links.jacobwgillespie.com/json',
+      atom: 'https://savedforlater.dev/atom',
+      json: 'https://savedforlater.dev/json',
     },
   })
 

@@ -60,11 +60,11 @@ function escapeRegExp(string: string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
-function buildTweetTitle(tweet: TwitterFavorite): string {
-  function buildPlaceholder(idx: number) {
-    return `__T_ENTITY_${idx}__`
-  }
+function buildPlaceholder(idx: number) {
+  return `__T_ENTITY_${idx}__`
+}
 
+function buildTweetTitle(tweet: TwitterFavorite): string {
   // Build sorted list of entities (URLs) to replace with placeholders
   const entities = [...tweet.entities.urls, ...(tweet.entities.media || [])].sort((a, b) => {
     if (a.indices[0] < b.indices[0]) return -1
@@ -85,7 +85,7 @@ function buildTweetTitle(tweet: TwitterFavorite): string {
   title = title.split(/[.?!](?=(\s|$))/)[0]
 
   // Remove trailing placeholders
-  for (const [idx] of entities.reverse().entries()) {
+  for (const [idx] of [...entities].reverse().entries()) {
     const placeholder = buildPlaceholder(entities.length - idx - 1)
     title = title.replace(new RegExp(`${placeholder} via @[a-zA-Z0-9_]+$`), '').trim()
     title = title.replace(new RegExp(`${placeholder}$`), '').trim()

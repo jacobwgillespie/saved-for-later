@@ -2,6 +2,7 @@ body {
   background-color: #222;
   color: #fff;
   padding: 4em;
+  padding-top: 5em;
   font-size: 15px;
   line-height: 1.4;
   font-family: system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue',
@@ -43,6 +44,10 @@ h1 {
   font-size: 2.2rem;
 }
 
+h1 a:visited {
+  color: #fff;
+}
+
 article {
   display: flex;
   align-items: baseline;
@@ -77,6 +82,24 @@ footer > * {
   margin-right: 14px;
 }
 
+#new {
+  transition: top 0.4s ease;
+  position: fixed;
+  top: -4em;
+  background-color: #000;
+  border: 1px solid #333;
+  padding: 1em 2em;
+}
+
+#new.visible {
+  top: 1em;
+}
+
+#new a,
+#new a:visited {
+  color: #5af78e;
+}
+
 @media only screen and (max-width: 900px) {
   body {
     padding: 2em;
@@ -100,6 +123,7 @@ footer > * {
     flex-direction: column;
     margin-bottom: 35px;
     align-items: start;
+    overflow-x: hidden;
   }
 
   article > * {

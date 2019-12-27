@@ -81,8 +81,9 @@ if ('serviceWorker' in navigator) {
     if (event.data.type === 'CACHE_UPDATED') {
       const {updatedURL} = event.data.payload
       if (updatedURL === window.location.href && !reloading) {
-        reloading = true
-        window.location.reload()
+        const banner = document.getElementById('new')
+        banner.setAttribute('aria-hidden', 'false')
+        banner.classList.add('visible')
       }
     }
   })
@@ -140,7 +141,8 @@ ${twitterLink}
 <link rel="alternate" type="application/json" title="Links by Jacob RSS feed" href="/json" />
 </head>
 <body>
-<h1>Links by Jacob</h1>
+<div id="new" aria-hidden="true">New content available, <a href="/">refresh now</a></div>
+<h1><a href="/">Links by Jacob</a></h1>
 ${itemsHTML.join('\n')}
 <footer>
 <span>Copyright &copy; ${new Date().getFullYear()} <a href="https://jacobwgillespie.com" target="_blank" rel="noopener">Jacob Gillespie</a></span> <a href="/rss">RSS</a> <a href="/atom">Atom</a> <a href="/json">JSON</a>

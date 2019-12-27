@@ -34,7 +34,6 @@ a.hn {
 a.tw {
   color: #1da1f2;
   display: inline-flex;
-  align-self: center;
 }
 
 a.tw svg {
@@ -110,5 +109,6 @@ footer > * {
 
   article > * {
     margin-right: 0;
+    margin-bottom: 0.125em;
   }
 }

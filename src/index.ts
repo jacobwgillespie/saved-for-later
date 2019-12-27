@@ -14,6 +14,14 @@ self.addEventListener('fetch', event => {
   event.respondWith(handleRequest(event))
 })
 
+async function etag(text: string) {
+  const msgUint8 = new TextEncoder().encode(text)
+  const hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8)
+  const hashArray = Array.from(new Uint8Array(hashBuffer))
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+  return `W/"${hashHex}"`
+}
+
 async function handleRequest(event: FetchEvent) {
   const request = event.request
   const url = new URL(request.url)
@@ -24,8 +32,9 @@ async function handleRequest(event: FetchEvent) {
   switch (pathname) {
     // Homepage
     case '/':
-      return new Response(template(url.pathname, await fetchFeedItems()), {
-        headers: {'Content-Type': 'text/html; charset=utf-8'},
+      const text = template(url.pathname, await fetchFeedItems())
+      return new Response(text, {
+        headers: {'Content-Type': 'text/html; charset=utf-8', ETag: await etag(text)},
       })
 
     case '/_debug':

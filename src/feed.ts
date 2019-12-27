@@ -71,17 +71,23 @@ export function template(url: string, items: FeedItem[]) {
     }
   })
 }`.trim()
-    : `if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-    var refreshingPage = false
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (!refreshingPage) {
-        refreshingPage = true
+    : `import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs'
+
+if ('serviceWorker' in navigator) {
+  const wb = new Workbox('/sw.js')
+
+  let reloading = false
+  wb.addEventListener('message', event => {
+    if (event.data.type === 'CACHE_UPDATED') {
+      const {updatedURL} = event.data.payload
+      if (updatedURL === window.location.href && !reloading) {
+        reloading = true
         window.location.reload()
       }
-    })
+    }
   })
+
+  wb.register()
 }
 `.trim()
 
@@ -139,7 +145,9 @@ ${itemsHTML.join('\n')}
 <footer>
 <span>Copyright &copy; ${new Date().getFullYear()} <a href="https://jacobwgillespie.com" target="_blank" rel="noopener">Jacob Gillespie</a></span> <a href="/rss">RSS</a> <a href="/atom">Atom</a> <a href="/json">JSON</a>
 </footer>
-<script>${serviceWorker}</script>
+<script type="module">
+${serviceWorker}
+</script>
 </body>
 </html>
   `.trim()

@@ -2,14 +2,12 @@
   "private": true,
   "scripts": {
     "build": "yarn build:sw && yarn build:worker",
-    "build:sw": "webpack --config webpack.sw.config.js && workbox injectManifest workbox-config.js",
+    "build:sw": "workbox injectManifest workbox-config.js",
     "build:worker": "wrangler build",
     "deploy": "./deploy.sh",
     "fmt": "prettier --write './**/*.{css,js,json,md,ts,yaml,yml}'",
     "fmt:check": "prettier -c './**/*.{css,js,json,md,ts,yaml,yml}'",
-    "watch": "run-p watch:*",
-    "watch:sw": "webpack --config webpack.sw.config.js --watch",
-    "watch:worker": "wrangler preview --watch"
+    "watch": "wrangler preview --watch"
   },
   "prettier": {
     "bracketSpacing": false,

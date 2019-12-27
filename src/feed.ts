@@ -64,8 +64,26 @@ export async function buildFeed() {
 export function template(url: string, items: FeedItem[]) {
   // If in debug mode, disable service worker
   const serviceWorker = DEBUG
-    ? "if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(registrations){for(const registration of registrations){registration.unregister()}})}"
-    : "if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js')})}"
+    ? `if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(registrations){
+    for (const registration of registrations) {
+      registration.unregister()
+    }
+  })
+}`.trim()
+    : `if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+    var refreshingPage = false
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!refreshingPage) {
+        refreshingPage = true
+        window.location.reload()
+      }
+    })
+  })
+}
+`.trim()
 
   const itemsHTML: string[] = []
 

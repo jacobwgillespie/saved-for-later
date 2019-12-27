@@ -3,9 +3,6 @@ type = "webpack"
 account_id = "a0574295ac148c420d69da8c3420a618"
 workers_dev = true
 webpack_config = "webpack.config.js"
-# kv-namespaces = [
-#   {binding = "CACHE_KV", id = "c5326cebea5346d4ab6df5cd6bb303b1"}
-# ]
 
 [site]
 bucket = "./public"

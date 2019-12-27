@@ -3,7 +3,7 @@ module.exports = {
   target: 'webworker',
   entry: './cloudflare-worker/index.ts',
   output: {
-    path: `${__dirname}/worker`,
+    path: `${__dirname}/../worker`,
     filename: 'script.js',
   },
   resolve: {

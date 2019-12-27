@@ -1,9 +1,8 @@
+import {format, parseISO} from 'date-fns'
 import 'dotenv/config'
-
-import {formatDistanceToNow, parseISO} from 'date-fns'
 import escapeHTML from 'escape-html'
 import fs from 'fs'
-import {fetchFeedItems, buildFeed} from './feed'
+import {buildFeed, fetchFeedItems} from './feed'
 
 const template = fs.readFileSync('static-site/template.html').toString('utf8')
 const style = fs.readFileSync('static-site/style.css').toString('utf8')
@@ -15,7 +14,7 @@ export async function build() {
 
   for (const item of items) {
     const isoDate = item.date
-    const relativeDate = `${formatDistanceToNow(parseISO(item.date))} ago`
+    const formattedDate = format(parseISO(item.date), 'LLL d yyyy')
 
     const hnLink = item.hn
       ? `<a href="https://news.ycombinator.com/item?id=${item.hn}" target="_blank" rel="noopener" class="hn">HN</a> `
@@ -33,7 +32,7 @@ export async function build() {
 <a href="${escapeHTML(item.link)}" target="_blank" rel="noopener"><h2>${escapeHTML(item.title)}</h2></a>
 ${hnLink}
 ${twitterLink}
-<time datetime="${escapeHTML(isoDate)}" title="${escapeHTML(isoDate)}">${escapeHTML(relativeDate)}</time>
+<time datetime="${escapeHTML(isoDate)}" title="${escapeHTML(isoDate)}">${escapeHTML(formattedDate)}</time>
 </article>
   `.trim(),
     )

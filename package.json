@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "yarn build:static && yarn build:sw && yarn build:worker",
-    "build:static": "ts-node -O '{\"module\": \"commonjs\"}' static-site/build.ts",
+    "build:static": "ts-node -O '{\"module\": \"commonjs\"}' static-site/build.ts && webpack --config static-site/webpack.config.js",
     "build:sw": "workbox generateSW service-worker/workbox-config.js",
     "build:worker": "wrangler build",
     "deploy": "./deploy.sh",

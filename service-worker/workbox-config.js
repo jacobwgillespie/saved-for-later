@@ -1,7 +1,7 @@
 module.exports = {
   clientsClaim: true,
   globDirectory: 'public/',
-  globPatterns: ['**/*.{png,css,html}'],
+  globPatterns: ['**/*.{png,css,html,js}'],
   runtimeCaching: [
     {
       urlPattern: /\/.*/,

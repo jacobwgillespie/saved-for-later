@@ -96,8 +96,9 @@ export function template(url: string, items: FeedItem[]) {
       : ''
 
     const twitterLink = item.twitter
-      ? `<a href="${escapeHTML(item.twitter)}" target="_blank" rel="noopener" class="tw">${item.twitterUsername ||
-          ''}</a> `
+      ? `<a href="${escapeHTML(item.twitter.link)}" target="_blank" rel="noopener" class="tw">${
+          item.twitter.username
+        }</a> `
       : ''
 
     itemsHTML.push(

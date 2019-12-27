@@ -36,6 +36,8 @@ The **service worker** is a special JavaScript asset that is installed in the br
 
 Finally, the **Cloudflare worker** is responsible for serving the static site and service worker via Cloudflare's [Workers Sites](https://workers.cloudflare.com/sites/). This worker is also responsible for handling redirects and clean URL routing.
 
+[GitHub Actions](https://github.com/jacobwgillespie/saved-for-later/actions) rebuilds the site every 5 minutes on a schedule, to retrieve any new items from Feedbin or Twitter, keeping the deployed site current.
+
 ### Contributing
 
 Contributions are welcome! Feel free to open an issue or pull request if you so desire.

@@ -7,9 +7,11 @@ body {
   font-family: system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue',
     'Lucida Grande', sans-serif;
   font-weight: 400;
+  max-width: 1440px;
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }

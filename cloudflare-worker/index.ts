@@ -33,7 +33,8 @@ async function handleRequest(event: FetchEvent) {
   const request = event.request
   const url = new URL(request.url)
 
-  if (url.hostname === 'links.jacobwgillespie.com') {
+  // Redirect HTML page requests to new website
+  if (url.hostname === 'links.jacobwgillespie.com' && !url.pathname.includes('.')) {
     url.hostname = 'savedforlater.dev'
     return Response.redirect(url.href, 301)
   }

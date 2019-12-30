@@ -9,6 +9,12 @@ body {
     'Lucida Grande', sans-serif;
   font-weight: 400;
   max-width: 1440px;
+
+  /* Fix Webkit (Safari) incorrectly increasing font size */
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 * {

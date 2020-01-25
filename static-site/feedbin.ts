@@ -5,6 +5,9 @@ import fetch from 'node-fetch'
 /** ID of the Hacker News feed in Feedbin */
 const HACKER_NEWS_FEED_ID = 10102
 
+/** ID of the Lobste.rs feed in Feedbin */
+const LOBSTERS_NEWS_FEED_ID = 54548
+
 /** Call the Feedbin API */
 async function feedbin<APIResponse = any>(endpoint: string): Promise<APIResponse> {
   const url = `https://api.feedbin.com/v2/${endpoint}`
@@ -51,6 +54,15 @@ export async function fetchFeedbinEntries(): Promise<FeedItem[]> {
       }
     }
 
+    // Determine if this is a Lobste.rs post
+    let lobsters: string | false = false
+    if (entry.feed_id === LOBSTERS_NEWS_FEED_ID) {
+      const match = entry.content.match(/(https:\/\/lobste\.rs\/s\/\w+\/\w+)/)
+      if (match && match[1]) {
+        lobsters = match[1]
+      }
+    }
+
     return {
       id: `https://feedbin.me/entries/${entry.id}`,
       title: entry.title,
@@ -58,6 +70,7 @@ export async function fetchFeedbinEntries(): Promise<FeedItem[]> {
       date: entry.published,
       content: entry.content,
       hn,
+      lobsters,
     }
   })
 }

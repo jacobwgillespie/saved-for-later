@@ -155,6 +155,7 @@ export async function fetchFavorites(): Promise<FeedItem[]> {
           date,
           content: renderContent(favorite),
           hn: false,
+          lobsters: false,
           twitter: {
             link: tweetLink,
             username: favorite.user.screen_name,

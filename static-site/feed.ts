@@ -10,6 +10,7 @@ export interface FeedItem {
   date: string
   content?: string
   hn: string | false
+  lobsters: string | false
   twitter?: {
     link: string
     username: string

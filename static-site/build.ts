@@ -20,6 +20,10 @@ export async function build() {
       ? `<a href="https://news.ycombinator.com/item?id=${item.hn}" target="_blank" rel="noopener" class="hn">HN</a> `
       : ''
 
+    const lobstersLink = item.lobsters
+      ? `<a href="${item.lobsters}" target="_blank" rel="noopener" class="lobsters">L</a> `
+      : ''
+
     const twitterLink = item.twitter
       ? `<a href="${escapeHTML(item.twitter.link)}" target="_blank" rel="noopener" class="tw">${
           item.twitter.username
@@ -30,8 +34,7 @@ export async function build() {
       `
 <article>
 <a href="${escapeHTML(item.link)}" target="_blank" rel="noopener"><h2>${escapeHTML(item.title)}</h2></a>
-${hnLink}
-${twitterLink}
+${hnLink}${lobstersLink}${twitterLink}
 <time datetime="${escapeHTML(isoDate)}" title="${escapeHTML(isoDate)}">${escapeHTML(formattedDate)}</time>
 </article>
   `.trim(),

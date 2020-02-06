@@ -11,4 +11,4 @@ yarn build:static
 yarn build:sw
 
 # Publish site and Cloudflare worker
-wrangler publish
+yarn wrangler publish

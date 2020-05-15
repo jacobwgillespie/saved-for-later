@@ -5,6 +5,7 @@
 /public/*.html
 /public/*.js
 /public/*.json
+/public/*.map
 /public/*.xml
 /site
 /worker

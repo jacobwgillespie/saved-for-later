@@ -4,7 +4,7 @@ import CloudflareWorkerGlobalScope from 'types-cloudflare-worker'
 // Loads Cloudflare Worker TypeScript types into the global scope
 declare var self: CloudflareWorkerGlobalScope
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event))
 })
 

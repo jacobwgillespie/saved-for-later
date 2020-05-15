@@ -32,7 +32,7 @@ interface FeedbinEntry {
 
 /** entryLoader loads full entries from Feedbin in chunks of 100 */
 const entryLoader = new DataLoader<number, FeedbinEntry>(
-  async ids => feedbin<FeedbinEntry[]>(`entries.json?ids=${ids.join(',')}&mode=extended`),
+  async (ids) => feedbin<FeedbinEntry[]>(`entries.json?ids=${ids.join(',')}&mode=extended`),
   {maxBatchSize: 100},
 )
 
@@ -42,9 +42,9 @@ export async function fetchFeedbinEntries(): Promise<FeedItem[]> {
   const entryIDs = await feedbin<number[]>('starred_entries.json')
 
   // Fetch full entries
-  const entries = await Promise.all(entryIDs.map(id => entryLoader.load(id)))
+  const entries = await Promise.all(entryIDs.map((id) => entryLoader.load(id)))
 
-  return entries.map(entry => {
+  return entries.map((entry) => {
     // Determine if this is a HN post
     let hn: string | false = false
     if (entry.feed_id === HACKER_NEWS_FEED_ID) {

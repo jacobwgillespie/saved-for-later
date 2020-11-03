@@ -1,4 +1,6 @@
+/.pnp.js
 /.vscode
+/.yarn
 /node_modules
 /public/*.html
 /public/*.js

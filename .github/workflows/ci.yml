@@ -18,6 +18,9 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn fmt:check
       - run: yarn build
+        env:
+          FEEDBIN_API_KEY: ${{ secrets.FEEDBIN_API_KEY }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
       - run: yarn deploy
         if: github.ref == 'refs/heads/main'
         env:

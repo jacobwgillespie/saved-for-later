@@ -30,6 +30,7 @@
     "feed": "^4.2.1",
     "node-fetch": "^2.6.1",
     "npm-run-all": "^4.1.5",
+    "pnp-webpack-plugin": "^1.6.4",
     "prettier": "^2.1.2",
     "ts-loader": "^8.0.7",
     "ts-node": "^9.0.0",

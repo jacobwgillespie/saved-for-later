@@ -1,6 +1,5 @@
 .env
 *.log
-/.vscode
 /node_modules
 /public/*.html
 /public/*.js
@@ -9,3 +8,11 @@
 /public/*.xml
 /site
 /worker
+
+# Yarn
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions

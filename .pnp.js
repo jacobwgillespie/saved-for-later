@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/kv-asset-handler", "npm:0.0.12"],
             ["@cloudflare/wrangler", "npm:1.12.2"],
             ["@types/escape-html", "npm:1.0.0"],
-            ["@types/node", "npm:14.14.9"],
+            ["@types/node", "npm:14.14.10"],
             ["@types/node-fetch", "npm:2.5.7"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.16.1"],
@@ -1772,7 +1772,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-keyv-npm-3.1.1-779a80f2c7-3aaf557d5b.zip/node_modules/@types/keyv/",
           "packageDependencies": [
             ["@types/keyv", "npm:3.1.1"],
-            ["@types/node", "npm:14.14.9"]
+            ["@types/node", "npm:14.14.10"]
           ],
           "linkType": "HARD",
         }]
@@ -1787,10 +1787,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/node", [
-        ["npm:14.14.9", {
-          "packageLocation": "./.yarn/cache/@types-node-npm-14.14.9-7ed4d3e449-df0405c708.zip/node_modules/@types/node/",
+        ["npm:14.14.10", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-14.14.10-5b464ba9d4-b793aa15e8.zip/node_modules/@types/node/",
           "packageDependencies": [
-            ["@types/node", "npm:14.14.9"]
+            ["@types/node", "npm:14.14.10"]
           ],
           "linkType": "HARD",
         }]
@@ -1800,7 +1800,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-fetch-npm-2.5.7-fd8c51e56f-101f6e8474.zip/node_modules/@types/node-fetch/",
           "packageDependencies": [
             ["@types/node-fetch", "npm:2.5.7"],
-            ["@types/node", "npm:14.14.9"],
+            ["@types/node", "npm:14.14.10"],
             ["form-data", "npm:3.0.0"]
           ],
           "linkType": "HARD",
@@ -1811,7 +1811,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-resolve-npm-0.0.8-191de904ac-f54f13e4b6.zip/node_modules/@types/resolve/",
           "packageDependencies": [
             ["@types/resolve", "npm:0.0.8"],
-            ["@types/node", "npm:14.14.9"]
+            ["@types/node", "npm:14.14.10"]
           ],
           "linkType": "HARD",
         }]
@@ -1821,7 +1821,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-responselike-npm-1.0.0-85dd08af42-e6e6613c80.zip/node_modules/@types/responselike/",
           "packageDependencies": [
             ["@types/responselike", "npm:1.0.0"],
-            ["@types/node", "npm:14.14.9"]
+            ["@types/node", "npm:14.14.10"]
           ],
           "linkType": "HARD",
         }]
@@ -4820,7 +4820,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/jest-worker-npm-26.6.2-46cbcd449f-5eb349833b.zip/node_modules/jest-worker/",
           "packageDependencies": [
             ["jest-worker", "npm:26.6.2"],
-            ["@types/node", "npm:14.14.9"],
+            ["@types/node", "npm:14.14.10"],
             ["merge-stream", "npm:2.0.0"],
             ["supports-color", "npm:7.2.0"]
           ],
@@ -6513,7 +6513,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["rollup", "npm:1.32.1"],
             ["@types/estree", "npm:0.0.45"],
-            ["@types/node", "npm:14.14.9"],
+            ["@types/node", "npm:14.14.10"],
             ["acorn", "npm:7.4.1"]
           ],
           "linkType": "HARD",
@@ -6578,7 +6578,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/kv-asset-handler", "npm:0.0.12"],
             ["@cloudflare/wrangler", "npm:1.12.2"],
             ["@types/escape-html", "npm:1.0.0"],
-            ["@types/node", "npm:14.14.9"],
+            ["@types/node", "npm:14.14.10"],
             ["@types/node-fetch", "npm:2.5.7"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.16.1"],

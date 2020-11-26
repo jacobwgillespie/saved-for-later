@@ -1352,10 +1352,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^14.14.9":
-  version: 14.14.9
-  resolution: "@types/node@npm:14.14.9"
-  checksum: df0405c708fa94831e7f71ed01cd6f859a38ab0daeae99e01afdd408905479f205556a43bafe5692c82cd126abbdc68baeb99b4b7d653c1480c289080b71622b
+"@types/node@npm:*, @types/node@npm:^14.14.10":
+  version: 14.14.10
+  resolution: "@types/node@npm:14.14.10"
+  checksum: b793aa15e8c08df50d0f77dc0fe7a93bc2e09bfa5a424841d4dba045d6ae8503b7ffe89b773ffe197c9b637c898bb22e78442e21ff4b33414d35160d9c3f8a9b
   languageName: node
   linkType: hard
 
@@ -5589,7 +5589,7 @@ fsevents@^1.2.7:
     "@cloudflare/kv-asset-handler": ^0.0.12
     "@cloudflare/wrangler": ^1.12.2
     "@types/escape-html": ^1.0.0
-    "@types/node": ^14.14.9
+    "@types/node": ^14.14.10
     "@types/node-fetch": ^2.5.7
     dataloader: ^2.0.0
     date-fns: ^2.16.1

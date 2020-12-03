@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@cloudflare/kv-asset-handler", "npm:0.0.12"],
+            ["@cloudflare/kv-asset-handler", "npm:0.1.0"],
             ["@cloudflare/wrangler", "npm:1.12.2"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.10"],
@@ -1546,10 +1546,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@cloudflare/kv-asset-handler", [
-        ["npm:0.0.12", {
-          "packageLocation": "./.yarn/cache/@cloudflare-kv-asset-handler-npm-0.0.12-aa7452e832-5179f6d36f.zip/node_modules/@cloudflare/kv-asset-handler/",
+        ["npm:0.1.0", {
+          "packageLocation": "./.yarn/cache/@cloudflare-kv-asset-handler-npm-0.1.0-6487be9bca-fda3e307f3.zip/node_modules/@cloudflare/kv-asset-handler/",
           "packageDependencies": [
-            ["@cloudflare/kv-asset-handler", "npm:0.0.12"],
+            ["@cloudflare/kv-asset-handler", "npm:0.1.0"],
             ["@cloudflare/workers-types", "npm:2.1.0"],
             ["@types/mime", "npm:2.0.3"],
             ["mime", "npm:2.4.6"]
@@ -6575,7 +6575,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["root-workspace-0b6124", "workspace:."],
-            ["@cloudflare/kv-asset-handler", "npm:0.0.12"],
+            ["@cloudflare/kv-asset-handler", "npm:0.1.0"],
             ["@cloudflare/wrangler", "npm:1.12.2"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.10"],

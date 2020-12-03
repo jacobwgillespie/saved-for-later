@@ -1141,14 +1141,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/kv-asset-handler@npm:^0.0.12":
-  version: 0.0.12
-  resolution: "@cloudflare/kv-asset-handler@npm:0.0.12"
+"@cloudflare/kv-asset-handler@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@cloudflare/kv-asset-handler@npm:0.1.0"
   dependencies:
     "@cloudflare/workers-types": ^2.0.0
     "@types/mime": ^2.0.2
     mime: ^2.4.6
-  checksum: 5179f6d36f9eb58fa4d22c18df5affb4da38f9b7494240e7e7a67bee97596b8aa51e092a5c88a001e8dd309ddcad7a71666aad739f715dd10ee730c1c24f78b4
+  checksum: fda3e307f3384bb1d5405eafceb52c72ec07256b120c397ff0fd1df30a79bcee65621da089e226ad16b99affb1ff18bc78e7a767f3017971000f47aec4713367
   languageName: node
   linkType: hard
 
@@ -5586,7 +5586,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@cloudflare/kv-asset-handler": ^0.0.12
+    "@cloudflare/kv-asset-handler": ^0.1.0
     "@cloudflare/wrangler": ^1.12.2
     "@types/escape-html": ^1.0.0
     "@types/node": ^14.14.10

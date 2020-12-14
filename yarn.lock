@@ -3236,7 +3236,7 @@ fsevents@^1.2.7:
 
 "fsevents@patch:fsevents@^1.2.7#builtin<compat/fsevents>":
   version: 1.2.13
-  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#builtin<compat/fsevents>::version=1.2.13&hash=127e8e"
+  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#builtin<compat/fsevents>::version=1.2.13&hash=11e9ea"
   dependencies:
     bindings: ^1.5.0
     nan: ^2.12.1
@@ -3246,7 +3246,7 @@ fsevents@^1.2.7:
 
 "fsevents@patch:fsevents@~2.1.2#builtin<compat/fsevents>":
   version: 2.1.3
-  resolution: "fsevents@patch:fsevents@npm%3A2.1.3#builtin<compat/fsevents>::version=2.1.3&hash=127e8e"
+  resolution: "fsevents@patch:fsevents@npm%3A2.1.3#builtin<compat/fsevents>::version=2.1.3&hash=11e9ea"
   dependencies:
     node-gyp: latest
   checksum: e2b8c379340e21a786d32c653854c8876f94eb1202dd5be378fd42c062bc123aab5051c32bf0011865257c85982c41ded203f9fe8c9f9c8f8c84dc4672abc0e0
@@ -5559,7 +5559,7 @@ fsevents@~2.1.2:
     npm-run-all: ^4.1.5
     pnp-webpack-plugin: ^1.6.4
     prettier: ^2.2.1
-    ts-loader: ^8.0.9
+    ts-loader: ^8.0.12
     ts-node: ^9.1.1
     types-cloudflare-worker: ^1.2.0
     typescript: ^4.1.3
@@ -6325,9 +6325,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:^8.0.9":
-  version: 8.0.9
-  resolution: "ts-loader@npm:8.0.9"
+"ts-loader@npm:^8.0.12":
+  version: 8.0.12
+  resolution: "ts-loader@npm:8.0.12"
   dependencies:
     chalk: ^2.3.0
     enhanced-resolve: ^4.0.0
@@ -6336,7 +6336,8 @@ fsevents@~2.1.2:
     semver: ^6.0.0
   peerDependencies:
     typescript: "*"
-  checksum: 20dcf7547a2c6d887170659eca2419901a347080861886b5ddd50e79ec5f710cb72cd277ff9901ad2d08ce8e540967d58addcef5e7cf8c658af3176335e30ec3
+    webpack: "*"
+  checksum: 70da090dacb77ff51eb71ddb506a63e4617487855637441f99e8f66553933c410af1a54e71316caa0b05522fb47eaf2c9a6aaa3a0abb8b6a12ebf50b6a80f54e
   languageName: node
   linkType: hard
 
@@ -6457,11 +6458,11 @@ typescript@^4.1.3:
 
 "typescript@patch:typescript@^4.1.3#builtin<compat/typescript>":
   version: 4.1.3
-  resolution: "typescript@patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=5bf698"
+  resolution: "typescript@patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5637a1074cdaed15dbdc109d7e495f00971742fc169b06e758181ac6b091d086f6a7d60d9977dc4572357038c7d798e0786a043eda37d7776537a3d939416a8d
+  checksum: 017af992148346e671d5b83b041773825888e9c94db8d2b9472cdbb6d6f0ee85927817473121524d319f8be6ffe5a6904d27ff6ef21356d2274fcadd52e17938
   languageName: node
   linkType: hard
 

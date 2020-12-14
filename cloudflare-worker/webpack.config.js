@@ -1,5 +1,3 @@
-const PnpWebpackPlugin = require(`pnp-webpack-plugin`)
-
 module.exports = {
   mode: 'production',
   target: 'webworker',
@@ -10,10 +8,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.mjs'],
-    plugins: [PnpWebpackPlugin],
-  },
-  resolveLoader: {
-    plugins: [PnpWebpackPlugin.moduleLoader(module)],
   },
   module: {
     rules: [

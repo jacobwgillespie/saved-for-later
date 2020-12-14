@@ -1,8 +1,7 @@
 name = "links"
-type = "webpack"
+type = "javascript"
 account_id = "a0574295ac148c420d69da8c3420a618"
 workers_dev = true
-webpack_config = "cloudflare-worker/webpack.config.js"
 
 [site]
 bucket = "./public"

@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/kv-asset-handler", "npm:0.1.0"],
             ["@cloudflare/wrangler", "npm:1.12.2"],
             ["@types/escape-html", "npm:1.0.0"],
-            ["@types/node", "npm:14.14.12"],
+            ["@types/node", "npm:14.14.13"],
             ["@types/node-fetch", "npm:2.5.7"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.16.1"],
@@ -1804,7 +1804,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-keyv-npm-3.1.1-779a80f2c7-3aaf557d5b.zip/node_modules/@types/keyv/",
           "packageDependencies": [
             ["@types/keyv", "npm:3.1.1"],
-            ["@types/node", "npm:14.14.12"]
+            ["@types/node", "npm:14.14.13"]
           ],
           "linkType": "HARD",
         }]
@@ -1828,10 +1828,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/node", [
-        ["npm:14.14.12", {
-          "packageLocation": "./.yarn/cache/@types-node-npm-14.14.12-ed91cd16f0-def4a93f6b.zip/node_modules/@types/node/",
+        ["npm:14.14.13", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-14.14.13-9e58dadb81-a879dae2e0.zip/node_modules/@types/node/",
           "packageDependencies": [
-            ["@types/node", "npm:14.14.12"]
+            ["@types/node", "npm:14.14.13"]
           ],
           "linkType": "HARD",
         }]
@@ -1841,7 +1841,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-fetch-npm-2.5.7-fd8c51e56f-101f6e8474.zip/node_modules/@types/node-fetch/",
           "packageDependencies": [
             ["@types/node-fetch", "npm:2.5.7"],
-            ["@types/node", "npm:14.14.12"],
+            ["@types/node", "npm:14.14.13"],
             ["form-data", "npm:3.0.0"]
           ],
           "linkType": "HARD",
@@ -1861,7 +1861,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-resolve-npm-1.17.1-9a8396bef2-8e72a73574.zip/node_modules/@types/resolve/",
           "packageDependencies": [
             ["@types/resolve", "npm:1.17.1"],
-            ["@types/node", "npm:14.14.12"]
+            ["@types/node", "npm:14.14.13"]
           ],
           "linkType": "HARD",
         }]
@@ -1871,7 +1871,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-responselike-npm-1.0.0-85dd08af42-e6e6613c80.zip/node_modules/@types/responselike/",
           "packageDependencies": [
             ["@types/responselike", "npm:1.0.0"],
-            ["@types/node", "npm:14.14.12"]
+            ["@types/node", "npm:14.14.13"]
           ],
           "linkType": "HARD",
         }]
@@ -4858,7 +4858,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/jest-worker-npm-26.6.2-46cbcd449f-5eb349833b.zip/node_modules/jest-worker/",
           "packageDependencies": [
             ["jest-worker", "npm:26.6.2"],
-            ["@types/node", "npm:14.14.12"],
+            ["@types/node", "npm:14.14.13"],
             ["merge-stream", "npm:2.0.0"],
             ["supports-color", "npm:7.2.0"]
           ],
@@ -6524,7 +6524,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/kv-asset-handler", "npm:0.1.0"],
             ["@cloudflare/wrangler", "npm:1.12.2"],
             ["@types/escape-html", "npm:1.0.0"],
-            ["@types/node", "npm:14.14.12"],
+            ["@types/node", "npm:14.14.13"],
             ["@types/node-fetch", "npm:2.5.7"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.16.1"],

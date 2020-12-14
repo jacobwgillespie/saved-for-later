@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: yarn install --immutable
+      - run: yarn install --immutable --immutable-cache
       - run: yarn fmt:check
       - run: yarn deploy
         env:

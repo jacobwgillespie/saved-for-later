@@ -23,7 +23,7 @@
     "@cloudflare/wrangler": "^1.13.0",
     "@types/escape-html": "^1.0.0",
     "@types/node": "^14.14.13",
-    "@types/node-fetch": "^2.5.7",
+    "@types/node-fetch": "^2.5.8",
     "@yarnpkg/pnpify": "^2.4.0",
     "dataloader": "^2.0.0",
     "date-fns": "^2.16.1",

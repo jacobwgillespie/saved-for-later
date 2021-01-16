@@ -41,7 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/wrangler", "npm:1.13.0"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.13"],
-            ["@types/node-fetch", "npm:2.5.7"],
+            ["@types/node-fetch", "npm:2.5.8"],
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.4.0"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.16.1"],
@@ -2402,10 +2402,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/node-fetch", [
-        ["npm:2.5.7", {
-          "packageLocation": "./.yarn/cache/@types-node-fetch-npm-2.5.7-fd8c51e56f-101f6e8474.zip/node_modules/@types/node-fetch/",
+        ["npm:2.5.8", {
+          "packageLocation": "./.yarn/cache/@types-node-fetch-npm-2.5.8-d946aa06c6-608cdd6aed.zip/node_modules/@types/node-fetch/",
           "packageDependencies": [
-            ["@types/node-fetch", "npm:2.5.7"],
+            ["@types/node-fetch", "npm:2.5.8"],
             ["@types/node", "npm:14.14.13"],
             ["form-data", "npm:3.0.0"]
           ],
@@ -7715,7 +7715,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/wrangler", "npm:1.13.0"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.13"],
-            ["@types/node-fetch", "npm:2.5.7"],
+            ["@types/node-fetch", "npm:2.5.8"],
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.4.0"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.16.1"],

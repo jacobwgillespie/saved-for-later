@@ -3466,12 +3466,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"feed@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "feed@npm:4.2.1"
+"feed@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "feed@npm:4.2.2"
   dependencies:
     xml-js: ^1.6.11
-  checksum: b782f0df7d110d82b01d0717cc32b12c756347af2f965776589980d06b2267354125f4b83c6050020c5c2c65987dba796b20a82e94b609fe081038d255006eae
+  checksum: ed335621ab68a8f9af85838d53d94e2c878647f206c44068779c7df69e6fadb4e91c753354c580522a65150738bd1eaa422dd056379a6fa2a77e453f8ea8f411
   languageName: node
   linkType: hard
 
@@ -6194,7 +6194,7 @@ fsevents@~2.1.2:
     dotenv: ^8.2.0
     emoji-regex: ^9.2.0
     escape-html: ^1.0.3
-    feed: ^4.2.1
+    feed: ^4.2.2
     node-fetch: ^2.6.1
     npm-run-all: ^4.1.5
     prettier: ^2.2.1

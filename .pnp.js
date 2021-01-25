@@ -48,7 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:8.2.0"],
             ["emoji-regex", "npm:9.2.0"],
             ["escape-html", "npm:1.0.3"],
-            ["feed", "npm:4.2.1"],
+            ["feed", "npm:4.2.2"],
             ["node-fetch", "npm:2.6.1"],
             ["npm-run-all", "npm:4.1.5"],
             ["prettier", "npm:2.2.1"],
@@ -4735,10 +4735,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["feed", [
-        ["npm:4.2.1", {
-          "packageLocation": "./.yarn/cache/feed-npm-4.2.1-2560a09603-b782f0df7d.zip/node_modules/feed/",
+        ["npm:4.2.2", {
+          "packageLocation": "./.yarn/cache/feed-npm-4.2.2-0c45e7a1e4-ed335621ab.zip/node_modules/feed/",
           "packageDependencies": [
-            ["feed", "npm:4.2.1"],
+            ["feed", "npm:4.2.2"],
             ["xml-js", "npm:1.6.11"]
           ],
           "linkType": "HARD",
@@ -7760,7 +7760,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:8.2.0"],
             ["emoji-regex", "npm:9.2.0"],
             ["escape-html", "npm:1.0.3"],
-            ["feed", "npm:4.2.1"],
+            ["feed", "npm:4.2.2"],
             ["node-fetch", "npm:2.6.1"],
             ["npm-run-all", "npm:4.1.5"],
             ["prettier", "npm:2.2.1"],

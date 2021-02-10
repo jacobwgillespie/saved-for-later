@@ -55,7 +55,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-loader", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:8.0.16"],
             ["ts-node", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:9.1.1"],
             ["types-cloudflare-worker", "npm:1.2.0"],
-            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"],
+            ["typescript", "patch:typescript@npm%3A4.1.4#builtin<compat/typescript>::version=4.1.4&hash=cc6730"],
             ["webpack", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:5.21.2"],
             ["webpack-cli", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:4.5.0"],
             ["workbox-cli", "npm:6.1.0"]
@@ -2840,7 +2840,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", null],
             ["lodash", "npm:4.17.20"],
             ["tslib", "npm:1.14.1"],
-            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
+            ["typescript", "patch:typescript@npm%3A4.1.4#builtin<compat/typescript>::version=4.1.4&hash=cc6730"]
           ],
           "packagePeers": [
             "@types/eslint",
@@ -7734,7 +7734,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-loader", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:8.0.16"],
             ["ts-node", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:9.1.1"],
             ["types-cloudflare-worker", "npm:1.2.0"],
-            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"],
+            ["typescript", "patch:typescript@npm%3A4.1.4#builtin<compat/typescript>::version=4.1.4&hash=cc6730"],
             ["webpack", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:5.21.2"],
             ["webpack-cli", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:4.5.0"],
             ["workbox-cli", "npm:6.1.0"]
@@ -8696,7 +8696,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["loader-utils", "npm:2.0.0"],
             ["micromatch", "npm:4.0.2"],
             ["semver", "npm:7.3.4"],
-            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"],
+            ["typescript", "patch:typescript@npm%3A4.1.4#builtin<compat/typescript>::version=4.1.4&hash=cc6730"],
             ["webpack", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:5.21.2"]
           ],
           "packagePeers": [
@@ -8726,7 +8726,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["diff", "npm:4.0.2"],
             ["make-error", "npm:1.3.6"],
             ["source-map-support", "npm:0.5.19"],
-            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"],
+            ["typescript", "patch:typescript@npm%3A4.1.4#builtin<compat/typescript>::version=4.1.4&hash=cc6730"],
             ["yn", "npm:3.1.1"]
           ],
           "packagePeers": [
@@ -8830,10 +8830,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typescript", [
-        ["patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730", {
-          "packageLocation": "./.yarn/cache/typescript-patch-7a9e6321b3-017af99214.zip/node_modules/typescript/",
+        ["patch:typescript@npm%3A4.1.4#builtin<compat/typescript>::version=4.1.4&hash=cc6730", {
+          "packageLocation": "./.yarn/cache/typescript-patch-fc103cf011-d913f9d92f.zip/node_modules/typescript/",
           "packageDependencies": [
-            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
+            ["typescript", "patch:typescript@npm%3A4.1.4#builtin<compat/typescript>::version=4.1.4&hash=cc6730"]
           ],
           "linkType": "HARD",
         }]

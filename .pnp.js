@@ -44,7 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node-fetch", "npm:2.5.8"],
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.4.0"],
             ["dataloader", "npm:2.0.0"],
-            ["date-fns", "npm:2.18.0"],
+            ["date-fns", "npm:2.19.0"],
             ["dotenv", "npm:8.2.0"],
             ["emoji-regex", "npm:9.2.0"],
             ["escape-html", "npm:1.0.3"],
@@ -4005,10 +4005,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["date-fns", [
-        ["npm:2.18.0", {
-          "packageLocation": "./.yarn/cache/date-fns-npm-2.18.0-5edf1f6623-58320ad512.zip/node_modules/date-fns/",
+        ["npm:2.19.0", {
+          "packageLocation": "./.yarn/cache/date-fns-npm-2.19.0-225f089506-99ec34199c.zip/node_modules/date-fns/",
           "packageDependencies": [
-            ["date-fns", "npm:2.18.0"]
+            ["date-fns", "npm:2.19.0"]
           ],
           "linkType": "HARD",
         }]
@@ -7723,7 +7723,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node-fetch", "npm:2.5.8"],
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.4.0"],
             ["dataloader", "npm:2.0.0"],
-            ["date-fns", "npm:2.18.0"],
+            ["date-fns", "npm:2.19.0"],
             ["dotenv", "npm:8.2.0"],
             ["emoji-regex", "npm:9.2.0"],
             ["escape-html", "npm:1.0.3"],

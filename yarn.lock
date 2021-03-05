@@ -1148,6 +1148,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cloudflare/binary-install@npm:0.2.0":
+  version: 0.2.0
+  resolution: "@cloudflare/binary-install@npm:0.2.0"
+  dependencies:
+    axios: ^0.21.1
+    rimraf: ^3.0.2
+    tar: ^6.0.2
+  checksum: 581f5ed61e1d29c306588f9d2bac345c87bc7e252f685e952e5b5d7caad0a52182cc82137292882a2cdc01951ff2cd46d7fcf32ea085dea53cb83e1f1ccc4234
+  languageName: node
+  linkType: hard
+
 "@cloudflare/kv-asset-handler@npm:^0.1.0":
   version: 0.1.0
   resolution: "@cloudflare/kv-asset-handler@npm:0.1.0"
@@ -1166,14 +1177,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/wrangler@npm:^1.13.0":
-  version: 1.13.0
-  resolution: "@cloudflare/wrangler@npm:1.13.0"
+"@cloudflare/wrangler@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "@cloudflare/wrangler@npm:1.14.0"
   dependencies:
-    binary-install: 0.0.1
+    "@cloudflare/binary-install": 0.2.0
   bin:
-    wrangler: run-wrangler.js
-  checksum: 851bdd25884469ec98b604324eef5447c45f0960557541e20ae0103d1aac5321f3c76e66163fcd794e3bf14cc398bc6049a4abb9e7f3c5033c236cc54426b965
+    wrangler: ./run-wrangler.js
+  checksum: f8af8991138705ed9578be8f977cd33780bcbfc49852c9cca6c6a5bd683f7d888d344aacf772c96e0ddacb5d1034682e03b29d5c8749791c37771f0505a1c79a
   languageName: node
   linkType: hard
 
@@ -2153,12 +2164,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.19.0":
-  version: 0.19.2
-  resolution: "axios@npm:0.19.2"
+"axios@npm:^0.21.1":
+  version: 0.21.1
+  resolution: "axios@npm:0.21.1"
   dependencies:
-    follow-redirects: 1.5.10
-  checksum: bad346deea24050f9953ce09bb8015f85a99a7b8f016806adccfab0b8981827d1fbee9c77c0ef7c70cc48392c1af6bbc65e07c3e88221d17282d2d5fd0a191f6
+    follow-redirects: ^1.10.0
+  checksum: 864fb7b5d077d236737f10adca53bf451a93f35a15271f56fba8da07265a02d26b7d881b935a6697dc6adb0549ea3e56d2eecb403edaa3bb78f6479901c10f69
   languageName: node
   linkType: hard
 
@@ -2220,20 +2231,6 @@ __metadata:
   version: 1.13.1
   resolution: "binary-extensions@npm:1.13.1"
   checksum: 7cdacc6dadaffb6a4d250c39ca51e1fd7ba0fd846348e2813465dfaa7fce1e59a3465c1555578e7e4e7959023b47824cc387b37780e2160f52fface775cc0133
-  languageName: node
-  linkType: hard
-
-"binary-install@npm:0.0.1":
-  version: 0.0.1
-  resolution: "binary-install@npm:0.0.1"
-  dependencies:
-    axios: ^0.19.0
-    env-paths: ^2.2.0
-    mkdirp: ^0.5.1
-    rimraf: ^3.0.0
-    tar: ^5.0.5
-    universal-url: ^2.0.0
-  checksum: d906863edda7ab5dc3cba61e6821f21a12b64a8e07f7aeca529723ea2651cea68286ee0a571729932355381ed5f2057b5669352c1bd1851078e9d905f3a00ed3
   languageName: node
   linkType: hard
 
@@ -2510,13 +2507,6 @@ __metadata:
     fsevents:
       optional: true
   checksum: 0758dcc7c6c7ace5924cf3c68088210932d391ab41026376b0adb8e07013ac87232e029f13468dfc9ca4dd59adae62a2b7eaedebb6c4e4f0ba92cbf3ac9e3721
-  languageName: node
-  linkType: hard
-
-"chownr@npm:^1.1.3":
-  version: 1.1.4
-  resolution: "chownr@npm:1.1.4"
-  checksum: 4a7f1a0b2637450fd15ddb085b10649487ddd1d59a8d9335b1aa5b1e9ad55840a591ab7d7f9b568001cb6777d017334477ab2e32e048788b13a069d011cd5781
   languageName: node
   linkType: hard
 
@@ -2843,15 +2833,6 @@ __metadata:
   version: 2.18.0
   resolution: "date-fns@npm:2.18.0"
   checksum: 58320ad5122bb2ae2f5aa23e2c432529d3390222bbec49339f8c360c2c07e5db8c26b40fe2cb2c947b4507732b9e1f9c195ec39572e14014291788ca07a5de6f
-  languageName: node
-  linkType: hard
-
-"debug@npm:=3.1.0":
-  version: 3.1.0
-  resolution: "debug@npm:3.1.0"
-  dependencies:
-    ms: 2.0.0
-  checksum: 1295acd5e0531761255661d325cd0a80ac8c5f6de8942a53bb23c2197ccb97526972de662ed0e5d9393be83f3428a298a6e7185ecb02f0da6282019cd2ffb4a8
   languageName: node
   linkType: hard
 
@@ -3522,12 +3503,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:1.5.10":
-  version: 1.5.10
-  resolution: "follow-redirects@npm:1.5.10"
-  dependencies:
-    debug: =3.1.0
-  checksum: 6e58e02c31337b6b41ffc3d5f3d49920b7db428eddcf374537da00ef121fe473983e12d8557f4304287604168d3efcc288d1f009abaf4c9d61e5db0c0cee3c4a
+"follow-redirects@npm:^1.10.0":
+  version: 1.13.3
+  resolution: "follow-redirects@npm:1.13.3"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 9ad74c3b66ad5c32d8c009a2afb4e5c1b9e5dbe1f631419296c21f8e4f9976ed2c52f9a676c4acdd1d7f41a8f17a03dfaa3704993b25b5965eb11bc9dc9a8ef5
   languageName: node
   linkType: hard
 
@@ -3995,13 +3977,6 @@ fsevents@~2.1.2:
   dependencies:
     function-bind: ^1.1.1
   checksum: c686e15300d41364486c099a9259d9c418022c294244843dcd712c4c286ff839d4f23a25413baa28c4d2c1e828afc2aaab70f685400b391533980223c71fa1ca
-  languageName: node
-  linkType: hard
-
-"hasurl@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "hasurl@npm:1.0.0"
-  checksum: 523cb8fc4d586c9b7de2be51c3f9b5130c2192c4724b209d71aaeed860e84591059a400a5095d375861fd63f5bdcf90a6e80e1efcc1c6f860cf6165bb27632e0
   languageName: node
   linkType: hard
 
@@ -5065,7 +5040,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"minizlib@npm:^2.1.0, minizlib@npm:^2.1.1":
+"minizlib@npm:^2.1.1":
   version: 2.1.2
   resolution: "minizlib@npm:2.1.2"
   dependencies:
@@ -5085,7 +5060,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"mkdirp@npm:^0.5.0, mkdirp@npm:^0.5.1":
+"mkdirp@npm:^0.5.1":
   version: 0.5.5
   resolution: "mkdirp@npm:0.5.5"
   dependencies:
@@ -6103,7 +6078,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
+"rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
   dependencies:
@@ -6147,7 +6122,7 @@ fsevents@~2.1.2:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@cloudflare/kv-asset-handler": ^0.1.0
-    "@cloudflare/wrangler": ^1.13.0
+    "@cloudflare/wrangler": ^1.14.0
     "@types/escape-html": ^1.0.0
     "@types/node": ^14.14.13
     "@types/node-fetch": ^2.5.8
@@ -6833,20 +6808,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"tar@npm:^5.0.5":
-  version: 5.0.5
-  resolution: "tar@npm:5.0.5"
-  dependencies:
-    chownr: ^1.1.3
-    fs-minipass: ^2.0.0
-    minipass: ^3.0.0
-    minizlib: ^2.1.0
-    mkdirp: ^0.5.0
-    yallist: ^4.0.0
-  checksum: ea6d53460d44a90a5534ece99c51061930936d145624865f3822729b6d9b187e4f7b913ed831dcec3bce360eca0ba1fc01f0446923404704a1dafa9fc421c084
-  languageName: node
-  linkType: hard
-
 "tar@npm:^6.0.2":
   version: 6.0.5
   resolution: "tar@npm:6.0.5"
@@ -7206,16 +7167,6 @@ typescript@^4.1.5:
   dependencies:
     crypto-random-string: ^2.0.0
   checksum: a2748b41eaada391800773c16674fe4e9a3f078162e49b2c6b4e67d36061a0f97be4b7851136d786ed5e4ddc90770400fd54bf32aed1e08ec9a9219d9b66bad3
-  languageName: node
-  linkType: hard
-
-"universal-url@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "universal-url@npm:2.0.0"
-  dependencies:
-    hasurl: ^1.0.0
-    whatwg-url: ^7.0.0
-  checksum: 403800e8b104e6cd131d802723ca75dc868b98d6acdd438dcd558dc66b83dcc25e20fe0508cb2cd68b22720cde8961f1638da3a0bc20ca93f911a8e073daa3b6
   languageName: node
   linkType: hard
 

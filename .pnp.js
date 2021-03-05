@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@cloudflare/kv-asset-handler", "npm:0.1.0"],
-            ["@cloudflare/wrangler", "npm:1.13.0"],
+            ["@cloudflare/wrangler", "npm:1.14.0"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.13"],
             ["@types/node-fetch", "npm:2.5.8"],
@@ -1987,6 +1987,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@cloudflare/binary-install", [
+        ["npm:0.2.0", {
+          "packageLocation": "./.yarn/cache/@cloudflare-binary-install-npm-0.2.0-1f846496e1-581f5ed61e.zip/node_modules/@cloudflare/binary-install/",
+          "packageDependencies": [
+            ["@cloudflare/binary-install", "npm:0.2.0"],
+            ["axios", "npm:0.21.1"],
+            ["rimraf", "npm:3.0.2"],
+            ["tar", "npm:6.0.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@cloudflare/kv-asset-handler", [
         ["npm:0.1.0", {
           "packageLocation": "./.yarn/cache/@cloudflare-kv-asset-handler-npm-0.1.0-6487be9bca-fda3e307f3.zip/node_modules/@cloudflare/kv-asset-handler/",
@@ -2009,11 +2021,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@cloudflare/wrangler", [
-        ["npm:1.13.0", {
-          "packageLocation": "./.yarn/cache/@cloudflare-wrangler-npm-1.13.0-556710f4f2-851bdd2588.zip/node_modules/@cloudflare/wrangler/",
+        ["npm:1.14.0", {
+          "packageLocation": "./.yarn/cache/@cloudflare-wrangler-npm-1.14.0-e3bedbf489-f8af899113.zip/node_modules/@cloudflare/wrangler/",
           "packageDependencies": [
-            ["@cloudflare/wrangler", "npm:1.13.0"],
-            ["binary-install", "npm:0.0.1"]
+            ["@cloudflare/wrangler", "npm:1.14.0"],
+            ["@cloudflare/binary-install", "npm:0.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -3234,11 +3246,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["axios", [
-        ["npm:0.19.2", {
-          "packageLocation": "./.yarn/cache/axios-npm-0.19.2-e4e8599895-bad346deea.zip/node_modules/axios/",
+        ["npm:0.21.1", {
+          "packageLocation": "./.yarn/cache/axios-npm-0.21.1-d192f6b3b3-864fb7b5d0.zip/node_modules/axios/",
           "packageDependencies": [
-            ["axios", "npm:0.19.2"],
-            ["follow-redirects", "npm:1.5.10"]
+            ["axios", "npm:0.21.1"],
+            ["follow-redirects", "virtual:d192f6b3b31cd5d11a443145a3883a70c04cbd7c813c53085dbaf50263735f1162f10fdbddd53c24e162ec3bc37b90966413084323739b7cf942b8bfb4da8831#npm:1.13.3"]
           ],
           "linkType": "HARD",
         }]
@@ -3311,21 +3323,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/binary-extensions-npm-1.13.1-fb81dec2b0-7cdacc6dad.zip/node_modules/binary-extensions/",
           "packageDependencies": [
             ["binary-extensions", "npm:1.13.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["binary-install", [
-        ["npm:0.0.1", {
-          "packageLocation": "./.yarn/cache/binary-install-npm-0.0.1-bf84a22567-d906863edd.zip/node_modules/binary-install/",
-          "packageDependencies": [
-            ["binary-install", "npm:0.0.1"],
-            ["axios", "npm:0.19.2"],
-            ["env-paths", "npm:2.2.0"],
-            ["mkdirp", "npm:0.5.5"],
-            ["rimraf", "npm:3.0.2"],
-            ["tar", "npm:5.0.5"],
-            ["universal-url", "npm:2.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -3627,13 +3624,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["chownr", [
-        ["npm:1.1.4", {
-          "packageLocation": "./.yarn/cache/chownr-npm-1.1.4-5bd400ab08-4a7f1a0b26.zip/node_modules/chownr/",
-          "packageDependencies": [
-            ["chownr", "npm:1.1.4"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/chownr-npm-2.0.0-638f1c9c61-b06ba0bf42.zip/node_modules/chownr/",
           "packageDependencies": [
@@ -4021,13 +4011,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["npm:3.1.0", {
-          "packageLocation": "./.yarn/cache/debug-npm-3.1.0-9f0accb99b-1295acd5e0.zip/node_modules/debug/",
-          "packageDependencies": [
-            ["debug", "npm:3.1.0"]
-          ],
-          "linkType": "SOFT",
-        }],
         ["npm:4.3.0", {
           "packageLocation": "./.yarn/cache/debug-npm-4.3.0-b4bda317a1-847d2760d1.zip/node_modules/debug/",
           "packageDependencies": [
@@ -4052,18 +4035,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["debug", "virtual:4c5f7cc299b83262eb3a9bb14179ac688853e5f3f2c324199242888766c19babd20d9449718a9a02e38e43232b86e4a5ce0faf2781f0a525a28548dfab22ca7f#npm:4.3.0"],
             ["ms", "npm:2.1.2"],
-            ["supports-color", null]
-          ],
-          "packagePeers": [
-            "supports-color"
-          ],
-          "linkType": "HARD",
-        }],
-        ["virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0", {
-          "packageLocation": "./.yarn/$$virtual/debug-virtual-f2284580f9/0/cache/debug-npm-3.1.0-9f0accb99b-1295acd5e0.zip/node_modules/debug/",
-          "packageDependencies": [
-            ["debug", "virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0"],
-            ["ms", "npm:2.0.0"],
             ["supports-color", null]
           ],
           "packagePeers": [
@@ -4796,11 +4767,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["follow-redirects", [
-        ["npm:1.5.10", {
-          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.5.10-bde6f43576-6e58e02c31.zip/node_modules/follow-redirects/",
+        ["npm:1.13.3", {
+          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.13.3-bc35dfad3e-9ad74c3b66.zip/node_modules/follow-redirects/",
           "packageDependencies": [
-            ["follow-redirects", "npm:1.5.10"],
-            ["debug", "virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0"]
+            ["follow-redirects", "npm:1.13.3"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:d192f6b3b31cd5d11a443145a3883a70c04cbd7c813c53085dbaf50263735f1162f10fdbddd53c24e162ec3bc37b90966413084323739b7cf942b8bfb4da8831#npm:1.13.3", {
+          "packageLocation": "./.yarn/$$virtual/follow-redirects-virtual-355f55dffb/0/cache/follow-redirects-npm-1.13.3-bc35dfad3e-9ad74c3b66.zip/node_modules/follow-redirects/",
+          "packageDependencies": [
+            ["follow-redirects", "virtual:d192f6b3b31cd5d11a443145a3883a70c04cbd7c813c53085dbaf50263735f1162f10fdbddd53c24e162ec3bc37b90966413084323739b7cf942b8bfb4da8831#npm:1.13.3"],
+            ["debug", null]
+          ],
+          "packagePeers": [
+            "debug"
           ],
           "linkType": "HARD",
         }]
@@ -5303,15 +5284,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/has-yarn-npm-2.1.0-b73f6750d9-105682f263.zip/node_modules/has-yarn/",
           "packageDependencies": [
             ["has-yarn", "npm:2.1.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["hasurl", [
-        ["npm:1.0.0", {
-          "packageLocation": "./.yarn/cache/hasurl-npm-1.0.0-198002760a-523cb8fc4d.zip/node_modules/hasurl/",
-          "packageDependencies": [
-            ["hasurl", "npm:1.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -7717,7 +7689,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["root-workspace-0b6124", "workspace:."],
             ["@cloudflare/kv-asset-handler", "npm:0.1.0"],
-            ["@cloudflare/wrangler", "npm:1.13.0"],
+            ["@cloudflare/wrangler", "npm:1.14.0"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.13"],
             ["@types/node-fetch", "npm:2.5.8"],
@@ -8447,19 +8419,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["tar", [
-        ["npm:5.0.5", {
-          "packageLocation": "./.yarn/cache/tar-npm-5.0.5-74bba3682a-ea6d53460d.zip/node_modules/tar/",
-          "packageDependencies": [
-            ["tar", "npm:5.0.5"],
-            ["chownr", "npm:1.1.4"],
-            ["fs-minipass", "npm:2.1.0"],
-            ["minipass", "npm:3.1.3"],
-            ["minizlib", "npm:2.1.2"],
-            ["mkdirp", "npm:0.5.5"],
-            ["yallist", "npm:4.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:6.0.5", {
           "packageLocation": "./.yarn/cache/tar-npm-6.0.5-a5360f3389-7ae2621092.zip/node_modules/tar/",
           "packageDependencies": [
@@ -8895,17 +8854,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["unique-string", "npm:2.0.0"],
             ["crypto-random-string", "npm:2.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["universal-url", [
-        ["npm:2.0.0", {
-          "packageLocation": "./.yarn/cache/universal-url-npm-2.0.0-b39e7d7f27-403800e8b1.zip/node_modules/universal-url/",
-          "packageDependencies": [
-            ["universal-url", "npm:2.0.0"],
-            ["hasurl", "npm:1.0.0"],
-            ["whatwg-url", "npm:7.1.0"]
           ],
           "linkType": "HARD",
         }]

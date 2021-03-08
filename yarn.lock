@@ -1177,14 +1177,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/wrangler@npm:^1.14.0":
-  version: 1.14.0
-  resolution: "@cloudflare/wrangler@npm:1.14.0"
+"@cloudflare/wrangler@npm:^1.14.1":
+  version: 1.14.1
+  resolution: "@cloudflare/wrangler@npm:1.14.1"
   dependencies:
     "@cloudflare/binary-install": 0.2.0
   bin:
-    wrangler: ./run-wrangler.js
-  checksum: f8af8991138705ed9578be8f977cd33780bcbfc49852c9cca6c6a5bd683f7d888d344aacf772c96e0ddacb5d1034682e03b29d5c8749791c37771f0505a1c79a
+    wrangler: run-wrangler.js
+  checksum: e4770af1deb05b479b1dd8d57bd01f83a69a17c001d5d4f3fe9b29ff858834eac6698ac9eddb7e59cfb91064334f88759fa31fbc03180b092b9ce6c6c043f4fd
   languageName: node
   linkType: hard
 
@@ -6122,7 +6122,7 @@ fsevents@~2.1.2:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@cloudflare/kv-asset-handler": ^0.1.0
-    "@cloudflare/wrangler": ^1.14.0
+    "@cloudflare/wrangler": ^1.14.1
     "@types/escape-html": ^1.0.0
     "@types/node": ^14.14.13
     "@types/node-fetch": ^2.5.8

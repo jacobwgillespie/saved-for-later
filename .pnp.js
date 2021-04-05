@@ -41,7 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/wrangler", "npm:1.15.0"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.37"],
-            ["@types/node-fetch", "npm:2.5.8"],
+            ["@types/node-fetch", "npm:2.5.9"],
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.4.0"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.19.0"],
@@ -2022,7 +2022,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["@cloudflare/wrangler", [
         ["npm:1.15.0", {
-          "packageLocation": "./.yarn/unplugged/@cloudflare-wrangler-npm-1.15.0-7fa7861868/node_modules/@cloudflare/wrangler/",
+          "packageLocation": "./.yarn/cache/@cloudflare-wrangler-npm-1.15.0-7fa7861868-6807c3d880.zip/node_modules/@cloudflare/wrangler/",
           "packageDependencies": [
             ["@cloudflare/wrangler", "npm:1.15.0"],
             ["@cloudflare/binary-install", "npm:0.2.0"]
@@ -2414,10 +2414,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/node-fetch", [
-        ["npm:2.5.8", {
-          "packageLocation": "./.yarn/cache/@types-node-fetch-npm-2.5.8-d946aa06c6-608cdd6aed.zip/node_modules/@types/node-fetch/",
+        ["npm:2.5.9", {
+          "packageLocation": "./.yarn/cache/@types-node-fetch-npm-2.5.9-5e5dea5720-0c25139d13.zip/node_modules/@types/node-fetch/",
           "packageDependencies": [
-            ["@types/node-fetch", "npm:2.5.8"],
+            ["@types/node-fetch", "npm:2.5.9"],
             ["@types/node", "npm:14.14.37"],
             ["form-data", "npm:3.0.0"]
           ],
@@ -4249,7 +4249,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["ejs", [
         ["npm:2.7.4", {
-          "packageLocation": "./.yarn/unplugged/ejs-npm-2.7.4-879ed38a4e/node_modules/ejs/",
+          "packageLocation": "./.yarn/cache/ejs-npm-2.7.4-879ed38a4e-f066d9a932.zip/node_modules/ejs/",
           "packageDependencies": [
             ["ejs", "npm:2.7.4"]
           ],
@@ -7692,7 +7692,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/wrangler", "npm:1.15.0"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.37"],
-            ["@types/node-fetch", "npm:2.5.8"],
+            ["@types/node-fetch", "npm:2.5.9"],
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.4.0"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.19.0"],

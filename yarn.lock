@@ -1469,13 +1469,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:^2.5.9":
-  version: 2.5.9
-  resolution: "@types/node-fetch@npm:2.5.9"
+"@types/node-fetch@npm:^2.5.10":
+  version: 2.5.10
+  resolution: "@types/node-fetch@npm:2.5.10"
   dependencies:
     "@types/node": "*"
     form-data: ^3.0.0
-  checksum: 0c25139d135382dfe6c63bcbfc059d29350a3d950a258d4611f13180e207926d68b07bd3d1937e6eb4a98213a6da1aa285cc94167b9cf67e41d4634d3d2f5b3b
+  checksum: 7687038f73cf0f2e4bac8ced3abdfbb77f8b2719de2f180d0064238d7460c8b4dc0b39c08da35a76d7db9f86528599ea0f7cee7c468ad7cfecfe2db1c5863641
   languageName: node
   linkType: hard
 
@@ -6125,7 +6125,7 @@ fsevents@~2.1.2:
     "@cloudflare/wrangler": ^1.15.0
     "@types/escape-html": ^1.0.0
     "@types/node": ^14.14.37
-    "@types/node-fetch": ^2.5.9
+    "@types/node-fetch": ^2.5.10
     "@yarnpkg/pnpify": ^2.4.0
     dataloader: ^2.0.0
     date-fns: ^2.19.0

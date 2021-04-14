@@ -26,7 +26,7 @@
     "@types/node-fetch": "^2.5.10",
     "@yarnpkg/pnpify": "^2.4.0",
     "dataloader": "^2.0.0",
-    "date-fns": "^2.20.2",
+    "date-fns": "^2.20.3",
     "dotenv": "^8.2.0",
     "emoji-regex": "^9.2.2",
     "escape-html": "^1.0.3",

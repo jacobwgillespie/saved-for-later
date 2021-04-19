@@ -6,3 +6,7 @@ workers_dev = true
 [site]
 bucket = "./public"
 entry-point = "./site"
+
+[build]
+upload.format = "service-worker"
+command = "yarn build"

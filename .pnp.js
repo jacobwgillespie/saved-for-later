@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@cloudflare/kv-asset-handler", "npm:0.1.1"],
-            ["@cloudflare/wrangler", "npm:1.15.1"],
+            ["@cloudflare/wrangler", "npm:1.16.0"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.37"],
             ["@types/node-fetch", "npm:2.5.10"],
@@ -2021,10 +2021,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@cloudflare/wrangler", [
-        ["npm:1.15.1", {
-          "packageLocation": "./.yarn/cache/@cloudflare-wrangler-npm-1.15.1-49d1a63e0f-b69e351e8b.zip/node_modules/@cloudflare/wrangler/",
+        ["npm:1.16.0", {
+          "packageLocation": "./.yarn/cache/@cloudflare-wrangler-npm-1.16.0-f67bc039b3-cae96d1a61.zip/node_modules/@cloudflare/wrangler/",
           "packageDependencies": [
-            ["@cloudflare/wrangler", "npm:1.15.1"],
+            ["@cloudflare/wrangler", "npm:1.16.0"],
             ["@cloudflare/binary-install", "npm:0.2.0"]
           ],
           "linkType": "HARD",
@@ -7689,7 +7689,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["root-workspace-0b6124", "workspace:."],
             ["@cloudflare/kv-asset-handler", "npm:0.1.1"],
-            ["@cloudflare/wrangler", "npm:1.15.1"],
+            ["@cloudflare/wrangler", "npm:1.16.0"],
             ["@types/escape-html", "npm:1.0.0"],
             ["@types/node", "npm:14.14.37"],
             ["@types/node-fetch", "npm:2.5.10"],

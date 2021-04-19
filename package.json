@@ -2,7 +2,7 @@
   "private": true,
   "main": "./worker/script.js",
   "scripts": {
-    "build": "yarn build:static && yarn build:sw && yarn build:worker-webpack && yarn build:worker-wrangler",
+    "build": "yarn build:static && yarn build:sw && yarn build:worker-wrangler",
     "build:static": "ts-node -O '{\"module\": \"commonjs\"}' static-site/build.ts && webpack --config static-site/webpack.config.js",
     "build:sw": "workbox generateSW service-worker/workbox-config.js",
     "build:worker-webpack": "webpack --config cloudflare-worker/webpack.config.js",

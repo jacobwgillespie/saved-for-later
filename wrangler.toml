@@ -9,4 +9,4 @@ entry-point = "./site"
 
 [build]
 upload.format = "service-worker"
-command = "yarn build"
+command = "yarn build:worker-webpack"

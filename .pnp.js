@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/kv-asset-handler", "npm:0.1.1"],
             ["@cloudflare/wrangler", "npm:1.15.1"],
             ["@types/escape-html", "npm:1.0.1"],
-            ["@types/node", "npm:14.14.41"],
+            ["@types/node", "npm:15.0.0"],
             ["@types/node-fetch", "npm:2.5.10"],
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:3.0.0-rc.3"],
             ["dataloader", "npm:2.0.0"],
@@ -2289,7 +2289,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/cacheable-request", "npm:6.0.1"],
             ["@types/http-cache-semantics", "npm:4.0.0"],
             ["@types/keyv", "npm:3.1.1"],
-            ["@types/node", "npm:14.14.41"],
+            ["@types/node", "npm:15.0.0"],
             ["@types/responselike", "npm:1.0.0"]
           ],
           "linkType": "HARD",
@@ -2374,7 +2374,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-keyv-npm-3.1.1-779a80f2c7-3aaf557d5b.zip/node_modules/@types/keyv/",
           "packageDependencies": [
             ["@types/keyv", "npm:3.1.1"],
-            ["@types/node", "npm:14.14.41"]
+            ["@types/node", "npm:15.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2405,10 +2405,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:14.14.41", {
-          "packageLocation": "./.yarn/cache/@types-node-npm-14.14.41-86b32c9f0d-37dfb63964.zip/node_modules/@types/node/",
+        ["npm:15.0.0", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-15.0.0-b4dfeecb83-9d3ced65fe.zip/node_modules/@types/node/",
           "packageDependencies": [
-            ["@types/node", "npm:14.14.41"]
+            ["@types/node", "npm:15.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2418,7 +2418,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-fetch-npm-2.5.10-86e5199acc-7687038f73.zip/node_modules/@types/node-fetch/",
           "packageDependencies": [
             ["@types/node-fetch", "npm:2.5.10"],
-            ["@types/node", "npm:14.14.41"],
+            ["@types/node", "npm:15.0.0"],
             ["form-data", "npm:3.0.0"]
           ],
           "linkType": "HARD",
@@ -2438,7 +2438,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-resolve-npm-1.17.1-9a8396bef2-8e72a73574.zip/node_modules/@types/resolve/",
           "packageDependencies": [
             ["@types/resolve", "npm:1.17.1"],
-            ["@types/node", "npm:14.14.41"]
+            ["@types/node", "npm:15.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2448,7 +2448,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-responselike-npm-1.0.0-85dd08af42-e6e6613c80.zip/node_modules/@types/responselike/",
           "packageDependencies": [
             ["@types/responselike", "npm:1.0.0"],
-            ["@types/node", "npm:14.14.41"]
+            ["@types/node", "npm:15.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -5821,7 +5821,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/jest-worker-npm-26.6.2-46cbcd449f-5eb349833b.zip/node_modules/jest-worker/",
           "packageDependencies": [
             ["jest-worker", "npm:26.6.2"],
-            ["@types/node", "npm:14.14.41"],
+            ["@types/node", "npm:15.0.0"],
             ["merge-stream", "npm:2.0.0"],
             ["supports-color", "npm:7.2.0"]
           ],
@@ -7583,7 +7583,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cloudflare/kv-asset-handler", "npm:0.1.1"],
             ["@cloudflare/wrangler", "npm:1.15.1"],
             ["@types/escape-html", "npm:1.0.1"],
-            ["@types/node", "npm:14.14.41"],
+            ["@types/node", "npm:15.0.0"],
             ["@types/node-fetch", "npm:2.5.10"],
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:3.0.0-rc.3"],
             ["dataloader", "npm:2.0.0"],

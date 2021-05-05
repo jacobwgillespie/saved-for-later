@@ -27,7 +27,7 @@
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "dataloader": "^2.0.0",
     "date-fns": "^2.21.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.4.0",
     "emoji-regex": "^9.2.2",
     "escape-html": "^1.0.3",
     "feed": "^4.2.2",

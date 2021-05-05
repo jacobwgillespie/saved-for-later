@@ -45,7 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:3.0.0-rc.3"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.21.1"],
-            ["dotenv", "npm:8.2.0"],
+            ["dotenv", "npm:8.4.0"],
             ["emoji-regex", "npm:9.2.2"],
             ["escape-html", "npm:1.0.3"],
             ["feed", "npm:4.2.2"],
@@ -4191,10 +4191,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["dotenv", [
-        ["npm:8.2.0", {
-          "packageLocation": "./.yarn/cache/dotenv-npm-8.2.0-6b21df4d37-16cb89cbd7.zip/node_modules/dotenv/",
+        ["npm:8.4.0", {
+          "packageLocation": "./.yarn/cache/dotenv-npm-8.4.0-57bc27fe7c-11312e62c1.zip/node_modules/dotenv/",
           "packageDependencies": [
-            ["dotenv", "npm:8.2.0"]
+            ["dotenv", "npm:8.4.0"]
           ],
           "linkType": "HARD",
         }]
@@ -7588,7 +7588,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:3.0.0-rc.3"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.21.1"],
-            ["dotenv", "npm:8.2.0"],
+            ["dotenv", "npm:8.4.0"],
             ["emoji-regex", "npm:9.2.2"],
             ["escape-html", "npm:1.0.3"],
             ["feed", "npm:4.2.2"],

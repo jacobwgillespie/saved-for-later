@@ -2985,10 +2985,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^8.4.0":
-  version: 8.4.0
-  resolution: "dotenv@npm:8.4.0"
-  checksum: 11312e62c1cd3f510986971b117ee38a1c333249afe6a2e9e4b82922bcabb42ce9796d059e8bf0f02893d4858bae5054f359e21963f2478745c767b64cffb773
+"dotenv@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "dotenv@npm:9.0.1"
+  checksum: d269ad03ed91e8f44a77fbf04ac6f67678b22a7ca2094f3033e1197d5d4756be29ad1ea3951a335149a2363889144a6b171dc91fda88a60114c5dd388a6e17d3
   languageName: node
   linkType: hard
 
@@ -6027,7 +6027,7 @@ fsevents@~2.3.1:
     "@yarnpkg/pnpify": ^3.0.0-rc.3
     dataloader: ^2.0.0
     date-fns: ^2.21.3
-    dotenv: ^8.4.0
+    dotenv: ^9.0.1
     emoji-regex: ^9.2.2
     escape-html: ^1.0.3
     feed: ^4.2.2

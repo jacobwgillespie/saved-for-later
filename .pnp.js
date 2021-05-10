@@ -45,7 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:3.0.0-rc.3"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.21.3"],
-            ["dotenv", "npm:8.4.0"],
+            ["dotenv", "npm:9.0.1"],
             ["emoji-regex", "npm:9.2.2"],
             ["escape-html", "npm:1.0.3"],
             ["feed", "npm:4.2.2"],
@@ -2022,7 +2022,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["@cloudflare/wrangler", [
         ["npm:1.15.1", {
-          "packageLocation": "./.yarn/unplugged/@cloudflare-wrangler-npm-1.15.1-49d1a63e0f/node_modules/@cloudflare/wrangler/",
+          "packageLocation": "./.yarn/cache/@cloudflare-wrangler-npm-1.15.1-49d1a63e0f-b69e351e8b.zip/node_modules/@cloudflare/wrangler/",
           "packageDependencies": [
             ["@cloudflare/wrangler", "npm:1.15.1"],
             ["@cloudflare/binary-install", "npm:0.2.0"]
@@ -4191,10 +4191,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["dotenv", [
-        ["npm:8.4.0", {
-          "packageLocation": "./.yarn/cache/dotenv-npm-8.4.0-57bc27fe7c-11312e62c1.zip/node_modules/dotenv/",
+        ["npm:9.0.1", {
+          "packageLocation": "./.yarn/cache/dotenv-npm-9.0.1-c34ea48d95-d269ad03ed.zip/node_modules/dotenv/",
           "packageDependencies": [
-            ["dotenv", "npm:8.4.0"]
+            ["dotenv", "npm:9.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -4221,7 +4221,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["ejs", [
         ["npm:2.7.4", {
-          "packageLocation": "./.yarn/unplugged/ejs-npm-2.7.4-879ed38a4e/node_modules/ejs/",
+          "packageLocation": "./.yarn/cache/ejs-npm-2.7.4-879ed38a4e-f066d9a932.zip/node_modules/ejs/",
           "packageDependencies": [
             ["ejs", "npm:2.7.4"]
           ],
@@ -7588,7 +7588,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:3.0.0-rc.3"],
             ["dataloader", "npm:2.0.0"],
             ["date-fns", "npm:2.21.3"],
-            ["dotenv", "npm:8.4.0"],
+            ["dotenv", "npm:9.0.1"],
             ["emoji-regex", "npm:9.2.2"],
             ["escape-html", "npm:1.0.3"],
             ["feed", "npm:4.2.2"],

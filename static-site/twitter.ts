@@ -135,33 +135,31 @@ export async function fetchFavorites(): Promise<FeedItem[]> {
   const favorites = await twitter('favorites/list.json?screen_name=jacobwgillespie&count=200&tweet_mode=extended')
 
   return Promise.all(
-    favorites.map(
-      async (favorite): Promise<FeedItem> => {
-        // Parse date
-        const date = parseTwitterDate(favorite.created_at).toISOString()
+    favorites.map(async (favorite): Promise<FeedItem> => {
+      // Parse date
+      const date = parseTwitterDate(favorite.created_at).toISOString()
 
-        // Resolve link
-        const tweetLink = `https://twitter.com/${favorite.user.screen_name}/status/${favorite.id_str}`
-        const firstURL = favorite.entities.urls.length ? favorite.entities.urls[0] : undefined
-        const link = firstURL ? firstURL.expanded_url : tweetLink
+      // Resolve link
+      const tweetLink = `https://twitter.com/${favorite.user.screen_name}/status/${favorite.id_str}`
+      const firstURL = favorite.entities.urls.length ? favorite.entities.urls[0] : undefined
+      const link = firstURL ? firstURL.expanded_url : tweetLink
 
-        // Construct title from first line of tweet, cleaning up trailing URLs or punctuation
-        let title = buildTweetTitle(favorite)
+      // Construct title from first line of tweet, cleaning up trailing URLs or punctuation
+      let title = buildTweetTitle(favorite)
 
-        return {
-          id: tweetLink,
-          title,
-          link,
-          date,
-          content: renderContent(favorite),
-          hn: false,
-          lobsters: false,
-          twitter: {
-            link: tweetLink,
-            username: favorite.user.screen_name,
-          },
-        }
-      },
-    ),
+      return {
+        id: tweetLink,
+        title,
+        link,
+        date,
+        content: renderContent(favorite),
+        hn: false,
+        lobsters: false,
+        twitter: {
+          link: tweetLink,
+          username: favorite.user.screen_name,
+        },
+      }
+    }),
   )
 }

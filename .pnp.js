@@ -2022,7 +2022,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["@cloudflare/wrangler", [
         ["npm:1.15.1", {
-          "packageLocation": "./.yarn/cache/@cloudflare-wrangler-npm-1.15.1-49d1a63e0f-b69e351e8b.zip/node_modules/@cloudflare/wrangler/",
+          "packageLocation": "./.yarn/unplugged/@cloudflare-wrangler-npm-1.15.1-49d1a63e0f/node_modules/@cloudflare/wrangler/",
           "packageDependencies": [
             ["@cloudflare/wrangler", "npm:1.15.1"],
             ["@cloudflare/binary-install", "npm:0.2.0"]
@@ -4221,7 +4221,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["ejs", [
         ["npm:2.7.4", {
-          "packageLocation": "./.yarn/cache/ejs-npm-2.7.4-879ed38a4e-f066d9a932.zip/node_modules/ejs/",
+          "packageLocation": "./.yarn/unplugged/ejs-npm-2.7.4-879ed38a4e/node_modules/ejs/",
           "packageDependencies": [
             ["ejs", "npm:2.7.4"]
           ],

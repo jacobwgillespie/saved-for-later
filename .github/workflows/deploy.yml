@@ -8,7 +8,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - run: yarn install --immutable --immutable-cache
       - run: yarn fmt:check
       - run: yarn deploy

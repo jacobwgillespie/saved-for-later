@@ -6018,7 +6018,7 @@ fsevents@~2.3.1:
     node-fetch: ^2.6.1
     npm-run-all: ^4.1.5
     prettier: ^2.3.0
-    ts-loader: ^9.2.0
+    ts-loader: ^9.2.1
     ts-node: ^9.1.1
     types-cloudflare-worker: ^1.2.0
     typescript: ^4.2.4
@@ -6833,9 +6833,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:^9.2.0":
-  version: 9.2.0
-  resolution: "ts-loader@npm:9.2.0"
+"ts-loader@npm:^9.2.1":
+  version: 9.2.1
+  resolution: "ts-loader@npm:9.2.1"
   dependencies:
     chalk: ^4.1.0
     enhanced-resolve: ^5.0.0
@@ -6844,7 +6844,7 @@ fsevents@~2.3.1:
   peerDependencies:
     typescript: "*"
     webpack: "*"
-  checksum: 500fdb41e831b859cf98ab11a80abe80ac49d03b481064382bea7bc9752002071b205ebec95904bc0f346fa52232dd86cacea12665c0bde16ef281c58ddac102
+  checksum: 492ec730aef84a23b0297b69718f7cde888ee29ec32d23483f31a3cb63e9e1ee2b398989d21b7b0279a4db035b0c342ae01a66fd56d6ab3495915aa7979501d3
   languageName: node
   linkType: hard
 

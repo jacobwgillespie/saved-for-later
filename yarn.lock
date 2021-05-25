@@ -1159,21 +1159,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/kv-asset-handler@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "@cloudflare/kv-asset-handler@npm:0.1.1"
+"@cloudflare/kv-asset-handler@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@cloudflare/kv-asset-handler@npm:0.1.2"
   dependencies:
-    "@cloudflare/workers-types": ^2.0.0
-    "@types/mime": ^2.0.2
-    mime: ^2.4.6
-  checksum: a4a599e702923c61361eeffab882073be784f11c084dc08ab23f2dfe8eec06a71a07b3e3cc9cdfa86936bf505877bba15a862ec1a6185078e2ee38acaa098ae9
-  languageName: node
-  linkType: hard
-
-"@cloudflare/workers-types@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "@cloudflare/workers-types@npm:2.1.0"
-  checksum: eb0c01d78c05c6ba4dce5267c678b18788d358a56939e0e9669b547d47612ed57451a8f0c3cc092ac3a6e1d31d2190d5479cd8b57ed8953fc8cd136fe97206ed
+    mime: ^2.5.2
+  checksum: 1a1bb7af15368a80b5c46700e86d157e0b05c01710174686336b54d27469ce0c49b9ba13bd0222d0f98d8b116aef306729bf521ad496240622161ecbcb73ebda
   languageName: node
   linkType: hard
 
@@ -1480,13 +1471,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 3aaf557d5b82e733d5a17b7f55af5d6be953363c3a594f006d64265790fe87c301c6e1400c0b6b1cf72add50a0ceddc25afb8231ab8302a2e5b6ebfbfac30e5d
-  languageName: node
-  linkType: hard
-
-"@types/mime@npm:^2.0.2":
-  version: 2.0.3
-  resolution: "@types/mime@npm:2.0.3"
-  checksum: 6df548a912494f8579d548cd883be0425f30eaa2922283335c405e270600f49045a06d766460c0f0edabb41dff570c614d174d3c52215de3bddd11f190ec9ae9
   languageName: node
   linkType: hard
 
@@ -4888,12 +4872,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"mime@npm:^2.4.6":
-  version: 2.4.6
-  resolution: "mime@npm:2.4.6"
+"mime@npm:^2.5.2":
+  version: 2.5.2
+  resolution: "mime@npm:2.5.2"
   bin:
     mime: cli.js
-  checksum: 319ec3858894aa9befa9da90e33c4422506689f1e3e7c939095df68abe848050a51070c78a31061769d9192051a8c9f33d14d6771dc0f2ff309fe846898e0807
+  checksum: 3e5377f0a1891350247699c5fff0469752a35d5c0baeb7cbee86907c143215ee8621d17c17401f10ffe020a0b327aa503b98cb7340039fce69bc465aed414fb7
   languageName: node
   linkType: hard
 
@@ -6031,7 +6015,7 @@ fsevents@~2.3.1:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@cloudflare/kv-asset-handler": ^0.1.1
+    "@cloudflare/kv-asset-handler": ^0.1.2
     "@cloudflare/wrangler": 1.15.x
     "@types/escape-html": ^1.0.1
     "@types/node": ^15.0.0

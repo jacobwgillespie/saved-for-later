@@ -2,14 +2,15 @@
   "private": true,
   "main": "./worker/script.js",
   "scripts": {
-    "build": "yarn build:static && yarn build:sw && yarn build:worker-wrangler",
+    "build": "pnpm build:static && pnpm build:sw && pnpm build:worker-wrangler",
     "build:static": "ts-node -O '{\"module\": \"commonjs\"}' static-site/build.ts && webpack --config static-site/webpack.config.js",
     "build:sw": "workbox generateSW service-worker/workbox-config.js",
     "build:worker-webpack": "webpack --config cloudflare-worker/webpack.config.js",
     "build:worker-wrangler": "wrangler build",
     "deploy": "./deploy.sh",
     "fmt": "prettier --write './**/*.{css,js,json,md,ts,yaml,yml}'",
-    "fmt:check": "prettier -c './**/*.{css,js,json,md,ts,yaml,yml}'"
+    "fmt:check": "prettier -c './**/*.{css,js,json,md,ts,yaml,yml}'",
+    "wrangler": "wrangler"
   },
   "prettier": {
     "bracketSpacing": false,
@@ -24,7 +25,6 @@
     "@types/escape-html": "^1.0.1",
     "@types/node": "^15.0.0",
     "@types/node-fetch": "^2.5.10",
-    "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "dataloader": "^2.0.0",
     "date-fns": "^2.21.3",
     "dotenv": "^10.0.0",

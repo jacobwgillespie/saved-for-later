@@ -7,9 +7,9 @@ if [ -f .env ]; then
 fi
 
 # Build dependencies
-yarn build:static
-yarn build:sw
-yarn build:worker-webpack
+pnpm build:static
+pnpm build:sw
+pnpm build:worker-webpack
 
 # Publish site and Cloudflare worker
-yarn wrangler publish
+pnpm wrangler publish

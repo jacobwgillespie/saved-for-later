@@ -6,3 +6,4 @@
 /public/*.xml
 /site
 /worker
+/pnpm-lock.yaml

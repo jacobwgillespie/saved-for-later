@@ -31,6 +31,9 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: '14'
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.4.0
 
       - run: git checkout HEAD^ -- pnpm-lock.yaml
       - run: pnpm install --ignore-scripts --lockfile-only

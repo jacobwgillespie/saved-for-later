@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@cloudflare/kv-asset-handler": "^0.1.2",
-    "@cloudflare/wrangler": "1.15.x",
+    "@cloudflare/wrangler": "1.16.x",
     "@types/escape-html": "^1.0.1",
     "@types/node": "^15.0.0",
     "@types/node-fetch": "^2.5.10",

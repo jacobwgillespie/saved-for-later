@@ -8,11 +8,3 @@
 /public/*.xml
 /site
 /worker
-
-# Yarn
-.yarn/*
-!.yarn/cache
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions

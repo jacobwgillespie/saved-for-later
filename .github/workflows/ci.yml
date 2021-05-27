@@ -7,13 +7,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
-      - run: yarn install --immutable --immutable-cache
-      - run: yarn fmt:check
-      - run: yarn build
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.4.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm fmt:check
+      - run: pnpm build
         env:
           FEEDBIN_API_KEY: ${{ secrets.FEEDBIN_API_KEY }}
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
-      - run: yarn deploy
+      - run: pnpm deploy
         if: github.ref == 'refs/heads/main'
         env:
           CF_EMAIL: ${{ secrets.CF_EMAIL }}

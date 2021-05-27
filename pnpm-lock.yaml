@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@cloudflare/kv-asset-handler': ^0.1.2
-  '@cloudflare/wrangler': 1.15.x
+  '@cloudflare/wrangler': 1.16.x
   '@types/escape-html': ^1.0.1
   '@types/node': ^15.0.0
   '@types/node-fetch': ^2.5.10
@@ -25,7 +25,7 @@ specifiers:
 
 devDependencies:
   '@cloudflare/kv-asset-handler': 0.1.2
-  '@cloudflare/wrangler': 1.15.1
+  '@cloudflare/wrangler': 1.16.1
   '@types/escape-html': 1.0.1
   '@types/node': 15.6.1
   '@types/node-fetch': 2.5.10
@@ -1070,29 +1070,20 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@cloudflare/binary-install/0.2.0:
-    resolution: {integrity: sha512-54n9ILgln+qUJc0BtbetEIEi1GrIL88p7ZDJy+BV8EsUqA7pMCMHAUOHjDq+YrIoqJHGJktlQJxBYB+4Umf3ww==}
-    engines: {node: '>=10'}
-    dependencies:
-      axios: 0.21.1
-      rimraf: 3.0.2
-      tar: 6.1.0
-    transitivePeerDependencies:
-      - debug
-    dev: true
-
   /@cloudflare/kv-asset-handler/0.1.2:
     resolution: {integrity: sha512-otES1gV5mEhNh82p/sJERPMMrC7UOLV2JyfKf4e3EX1TmMkZ3N8IDGAqRNsoRU8UYTO7wc83I7pH1p4ozAdgMQ==}
     dependencies:
       mime: 2.5.2
     dev: true
 
-  /@cloudflare/wrangler/1.15.1:
-    resolution: {integrity: sha512-QwRfpgN//3vo27bk4oBe+Aj2a6ZgHgQCfFxf0PJm7j9boSWtttKwZPLOyJPHBJEF+sLwg/eqwcwAbUwPviABbA==}
+  /@cloudflare/wrangler/1.16.1:
+    resolution: {integrity: sha512-jDxtri9v6IRszObICQU+eB/eFGySOnBJJvVcp5tp+Q1niH2l51wbWoXOThLfgv0DeSu7o7rSpjn13oULeSj2vg==}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@cloudflare/binary-install': 0.2.0
+      axios: 0.21.1
+      rimraf: 3.0.2
+      tar: 6.1.0
     transitivePeerDependencies:
       - debug
     dev: true

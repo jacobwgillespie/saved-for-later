@@ -5,7 +5,7 @@ workers_dev = true
 
 [site]
 bucket = "./public"
-entry-point = "./site"
+entry-point = "./worker"
 
 [build]
 command = "pnpm build:worker-webpack"

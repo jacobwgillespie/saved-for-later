@@ -6,3 +6,9 @@ workers_dev = true
 [site]
 bucket = "./public"
 entry-point = "./site"
+
+[build]
+command = "pnpm build:worker-webpack"
+
+[build.upload]
+format = "service-worker"

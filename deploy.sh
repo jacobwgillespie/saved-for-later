@@ -9,7 +9,6 @@ fi
 # Build dependencies
 pnpm build:static
 pnpm build:sw
-pnpm build:worker-webpack
 
 # Publish site and Cloudflare worker
 pnpm wrangler publish

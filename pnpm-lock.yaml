@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@cloudflare/kv-asset-handler': ^0.1.2
-  '@cloudflare/wrangler': 1.17.x
+  '@cloudflare/wrangler': 1.18.x
   '@types/escape-html': ^1.0.1
   '@types/node': ^16.0.0
   '@types/node-fetch': ^2.5.10
@@ -25,7 +25,7 @@ specifiers:
 
 devDependencies:
   '@cloudflare/kv-asset-handler': 0.1.2
-  '@cloudflare/wrangler': 1.17.0
+  '@cloudflare/wrangler': 1.18.0
   '@types/escape-html': 1.0.1
   '@types/node': 16.0.0
   '@types/node-fetch': 2.5.10
@@ -1076,8 +1076,8 @@ packages:
       mime: 2.5.2
     dev: true
 
-  /@cloudflare/wrangler/1.17.0:
-    resolution: {integrity: sha512-phGI5j6jpyWcdjh6muxKaX2vZHgNnDporrw16eGqWCe5K/J+dgY4MBpkN3v4VJ4sW6TvSzVdsvr8xwwI1Rzg9g==}
+  /@cloudflare/wrangler/1.18.0:
+    resolution: {integrity: sha512-Hsl3dnmu9c8cX28LT4DskAeRqRgDEb5mWdD/R4o7oTFGOGNk4/hBEAH40xRVrGIcTAyCQh+WPEQ8uzFkIBZbYQ==}
     hasBin: true
     requiresBuild: true
     dependencies:

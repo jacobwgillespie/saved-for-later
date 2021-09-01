@@ -12,7 +12,7 @@ specifiers:
   emoji-regex: ^9.2.2
   escape-html: ^1.0.3
   feed: ^4.2.2
-  node-fetch: ^2.6.1
+  node-fetch: ^3.0.0
   npm-run-all: ^4.1.5
   prettier: ^2.3.0
   ts-loader: ^9.2.2
@@ -35,7 +35,7 @@ devDependencies:
   emoji-regex: 9.2.2
   escape-html: 1.0.3
   feed: 4.2.2
-  node-fetch: 2.6.1
+  node-fetch: 3.0.0
   npm-run-all: 4.1.5
   prettier: 2.3.0
   ts-loader: 9.2.2_typescript@4.3.2+webpack@5.38.0
@@ -2019,6 +2019,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /data-uri-to-buffer/3.0.1:
+    resolution: {integrity: sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==}
+    engines: {node: '>= 6'}
+    dev: true
+
   /dataloader/2.0.0:
     resolution: {integrity: sha512-YzhyDAwA4TaQIhM5go+vCLmU0UikghC/t9DTQYZR2M/UvZ1MdOhPezSDZcjj9uqQJOMqjLcpWtyW2iNINdlatQ==}
     dev: true
@@ -2370,6 +2375,13 @@ packages:
     engines: {node: '>=0.4.0'}
     dependencies:
       xml-js: 1.6.11
+    dev: true
+
+  /fetch-blob/3.1.2:
+    resolution: {integrity: sha512-hunJbvy/6OLjCD0uuhLdp0mMPzP/yd2ssd1t2FCJsaA7wkWhpbp9xfuNVpv7Ll4jFhzp6T4LAupSiV9uOeg0VQ==}
+    engines: {node: ^12.20 || >= 14.13}
+    dependencies:
+      web-streams-polyfill: 3.1.0
     dev: true
 
   /figures/3.2.0:
@@ -3413,9 +3425,12 @@ packages:
     resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}
     dev: true
 
-  /node-fetch/2.6.1:
-    resolution: {integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==}
-    engines: {node: 4.x || >=6.0.0}
+  /node-fetch/3.0.0:
+    resolution: {integrity: sha512-bKMI+C7/T/SPU1lKnbQbwxptpCrG9ashG+VkytmXCPZyuM9jB6VU+hY0oi4lC8LxTtAeWdckNCTa3nrGsAdA3Q==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      data-uri-to-buffer: 3.0.1
+      fetch-blob: 3.1.2
     dev: true
 
   /node-releases/1.1.72:
@@ -4690,6 +4705,11 @@ packages:
     resolution: {integrity: sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=}
     dependencies:
       defaults: 1.0.3
+    dev: true
+
+  /web-streams-polyfill/3.1.0:
+    resolution: {integrity: sha512-wO9r1YnYe7kFBLHyyVEhV1H8VRWoNiNnuP+v/HUUmSTaRF8F93Kmd3JMrETx0f11GXxRek6OcL2QtjFIdc5WYw==}
+    engines: {node: '>= 8'}
     dev: true
 
   /webidl-conversions/4.0.2:

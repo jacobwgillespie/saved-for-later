@@ -9,7 +9,7 @@ specifiers:
   dataloader: ^2.0.0
   date-fns: ^2.21.3
   dotenv: ^10.0.0
-  emoji-regex: ^9.2.2
+  emoji-regex: ^10.0.0
   escape-html: ^1.0.3
   feed: ^4.2.2
   node-fetch: ^2.6.1
@@ -32,7 +32,7 @@ devDependencies:
   dataloader: 2.0.0
   date-fns: 2.21.3
   dotenv: 10.0.0
-  emoji-regex: 9.2.2
+  emoji-regex: 10.0.0
   escape-html: 1.0.3
   feed: 4.2.2
   node-fetch: 2.6.1
@@ -2156,16 +2156,16 @@ packages:
     resolution: {integrity: sha512-Mi2m55JrX2BFbNZGKYR+2ItcGnR4O5HhrvgoRRyZQlaMGQULqDhoGkLWHzJoshSzi7k1PUofxcDbNhlFrDZNhg==}
     dev: true
 
+  /emoji-regex/10.0.0:
+    resolution: {integrity: sha512-KmJa8l6uHi1HrBI34udwlzZY1jOEuID/ft4d8BSSEdRyap7PwBEt910453PJa5MuGvxkLqlt4Uvhu7tttFHViw==}
+    dev: true
+
   /emoji-regex/7.0.3:
     resolution: {integrity: sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzmu8T5Z1QofhmTIhItA==}
     dev: true
 
   /emoji-regex/8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
-    dev: true
-
-  /emoji-regex/9.2.2:
-    resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
     dev: true
 
   /end-of-stream/1.4.4:

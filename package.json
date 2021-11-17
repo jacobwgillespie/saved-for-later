@@ -20,7 +20,7 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "@cloudflare/kv-asset-handler": "^0.1.2",
+    "@cloudflare/kv-asset-handler": "^0.2.0",
     "@cloudflare/wrangler": "1.19.x",
     "@types/escape-html": "^1.0.1",
     "@types/node": "^16.0.0",

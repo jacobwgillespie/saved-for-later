@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@cloudflare/kv-asset-handler': ^0.1.2
+  '@cloudflare/kv-asset-handler': ^0.2.0
   '@cloudflare/wrangler': 1.19.x
   '@types/escape-html': ^1.0.1
   '@types/node': ^16.0.0
@@ -24,7 +24,7 @@ specifiers:
   workbox-cli: ^6.1.5
 
 devDependencies:
-  '@cloudflare/kv-asset-handler': 0.1.2
+  '@cloudflare/kv-asset-handler': 0.2.0
   '@cloudflare/wrangler': 1.19.0
   '@types/escape-html': 1.0.1
   '@types/node': 16.0.0
@@ -1070,10 +1070,10 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@cloudflare/kv-asset-handler/0.1.2:
-    resolution: {integrity: sha512-otES1gV5mEhNh82p/sJERPMMrC7UOLV2JyfKf4e3EX1TmMkZ3N8IDGAqRNsoRU8UYTO7wc83I7pH1p4ozAdgMQ==}
+  /@cloudflare/kv-asset-handler/0.2.0:
+    resolution: {integrity: sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==}
     dependencies:
-      mime: 2.5.2
+      mime: 3.0.0
     dev: true
 
   /@cloudflare/wrangler/1.19.0:
@@ -3302,9 +3302,9 @@ packages:
       mime-db: 1.47.0
     dev: true
 
-  /mime/2.5.2:
-    resolution: {integrity: sha512-tqkh47FzKeCPD2PUiPB6pkbMzsCasjxAfC62/Wap5qrUWcb+sFasXUC5I3gYM5iBM8v/Qpn4UK0x+j0iHyFPDg==}
-    engines: {node: '>=4.0.0'}
+  /mime/3.0.0:
+    resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
+    engines: {node: '>=10.0.0'}
     hasBin: true
     dev: true
 

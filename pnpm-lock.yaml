@@ -8,7 +8,7 @@ specifiers:
   '@types/node-fetch': ^2.5.10
   dataloader: ^2.0.0
   date-fns: ^2.21.3
-  dotenv: ^15.0.0
+  dotenv: ^16.0.0
   emoji-regex: ^10.0.0
   escape-html: ^1.0.3
   feed: ^4.2.2
@@ -31,7 +31,7 @@ devDependencies:
   '@types/node-fetch': 2.5.10
   dataloader: 2.0.0
   date-fns: 2.21.3
-  dotenv: 15.0.0
+  dotenv: 16.0.0
   emoji-regex: 10.0.0
   escape-html: 1.0.3
   feed: 4.2.2
@@ -2137,8 +2137,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /dotenv/15.0.0:
-    resolution: {integrity: sha512-/l1sXXm79ry34KwwS0y4oVZjB468iw/6u9g1W26dtexKcIJAnVL2pMF+hxQwzZ7LutxOwEgtym9eIxvX33CMKg==}
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
     engines: {node: '>=12'}
     dev: true
 

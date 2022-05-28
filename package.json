@@ -18,7 +18,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prebuild": "npm run clean",
-    "start": "NODE_ENV=production pnpm dev:wrangler"
+    "start": "NODE_ENV=production pnpm dev:wrangler",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",

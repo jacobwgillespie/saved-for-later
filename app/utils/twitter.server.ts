@@ -1,14 +1,14 @@
 import parse from 'date-fns/parse'
 import emojiRegex from 'emoji-regex'
-import {FeedItem} from './feed'
-import fetch from 'node-fetch'
+import {TWITTER_API_KEY} from './env.server'
+import type {FeedItem} from './feed.server'
 
 const allEmojiRegex = emojiRegex()
 
 /** Call the Twitter API, caching responses */
 async function twitter(endpoint: string): Promise<TwitterFavorite[]> {
   const url = `https://api.twitter.com/1.1/${endpoint}`
-  const response = await fetch(url, {headers: {Authorization: `bearer ${process.env.TWITTER_API_KEY}`}})
+  const response = await fetch(url, {headers: {Authorization: `bearer ${TWITTER_API_KEY}`}})
   const result = await response.json()
   if (!Array.isArray(result)) {
     throw new Error('Twitter API error')

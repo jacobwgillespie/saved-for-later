@@ -1,7 +1,8 @@
 import {parseISO} from 'date-fns'
 import {Feed} from 'feed'
-import {fetchFavorites} from './twitter'
-import {fetchFeedbinEntries} from './feedbin'
+import {fetchFeedbinEntries} from './feedbin.server'
+import {getKV} from './kv'
+import {fetchFavorites} from './twitter.server'
 
 export interface FeedItem {
   id: string
@@ -17,18 +18,27 @@ export interface FeedItem {
   }
 }
 
-export async function fetchFeedItems() {
+export async function fetchFeedItems(context: any) {
+  const kv = getKV(context)
+  const existing = await kv.get<FeedItem[]>('feedItems', 'json')
+  if (existing) return existing
+
   const feedbinItems: Promise<FeedItem[]> = fetchFeedbinEntries()
   const twitterItems: Promise<FeedItem[]> = fetchFavorites()
 
   const items = (await Promise.all([feedbinItems, twitterItems])).flat()
 
-  // Return entries, sorted in reverse chronological order
-  return items.sort((a, b) => {
+  // Sort entries in reverse chronological order
+  const sortedItems = items.sort((a, b) => {
     if (a.date < b.date) return 1
     if (b.date < a.date) return -1
     return 0
   })
+
+  // Cache items for 5 minutes
+  await kv.put('feedItems', JSON.stringify(sortedItems), {expirationTtl: 60 * 5})
+
+  return sortedItems
 }
 
 export async function buildFeed(items: FeedItem[]) {

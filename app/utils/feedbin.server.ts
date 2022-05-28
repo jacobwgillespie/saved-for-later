@@ -1,6 +1,6 @@
 import DataLoader from 'dataloader'
-import {FeedItem} from './feed'
-import fetch from 'node-fetch'
+import {FEEDBIN_API_KEY} from './env.server'
+import type {FeedItem} from './feed.server'
 
 /** ID of the Hacker News feed in Feedbin */
 const HACKER_NEWS_FEED_ID = 10102
@@ -12,7 +12,7 @@ const LOBSTERS_NEWS_FEED_ID = 54548
 async function feedbin<APIResponse = any>(endpoint: string): Promise<APIResponse> {
   const url = `https://api.feedbin.com/v2/${endpoint}`
   const response = await fetch(url, {
-    headers: {Authorization: `Basic ${process.env.FEEDBIN_API_KEY}`},
+    headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`},
   })
   return response.json()
 }

@@ -18,10 +18,10 @@ export interface FeedItem {
   }
 }
 
-export async function fetchFeedItems(context: any) {
+export async function fetchFeedItems(context: any, refresh: boolean) {
   const kv = getKV(context)
   const existing = await kv.get<FeedItem[]>('feedItems', 'json')
-  if (existing) return existing
+  if (!refresh && existing) return existing
 
   const feedbinItems: Promise<FeedItem[]> = fetchFeedbinEntries()
   const twitterItems: Promise<FeedItem[]> = fetchFavorites()
@@ -36,7 +36,7 @@ export async function fetchFeedItems(context: any) {
   })
 
   // Cache items for 5 minutes
-  await kv.put('feedItems', JSON.stringify(sortedItems), {expirationTtl: 60 * 5})
+  await kv.put('feedItems', JSON.stringify(sortedItems), {expirationTtl: 60 * 15})
 
   return sortedItems
 }

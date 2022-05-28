@@ -29,9 +29,10 @@ interface LoaderData {
   items: FeedItem[]
 }
 
-export const loader: LoaderFunction = async ({context}) => {
+export const loader: LoaderFunction = async ({context, request}) => {
   loadEnvFromContext(context)
-  const items = await fetchFeedItems(context)
+  const url = new URL(request.url)
+  const items = await fetchFeedItems(context, url.searchParams.has('refresh'))
   return json<LoaderData>({items})
 }
 

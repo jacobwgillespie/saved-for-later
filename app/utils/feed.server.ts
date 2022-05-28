@@ -18,7 +18,7 @@ export interface FeedItem {
   }
 }
 
-export async function fetchFeedItems(context: any, refresh: boolean) {
+export async function fetchFeedItems(context: any, refresh = false) {
   const kv = getKV(context)
   const existing = await kv.get<FeedItem[]>('feedItems', 'json')
   if (!refresh && existing) return existing

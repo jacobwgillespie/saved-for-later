@@ -8,7 +8,7 @@
     "build": "pnpm build:css && pnpm build:remix",
     "build:css": "tailwindcss -m -i styles/app.css -o app/styles/app.css",
     "build:remix": "NODE_ENV=production remix build",
-    "clean": "rimraf .cache app/styles/app.css build public/build",
+    "clean": "rm -rf .cache app/styles/app.css build public/build",
     "dev": "pnpm build && run-p dev:*",
     "dev:css": "tailwindcss -w -i styles/app.css -o app/styles/app.css",
     "dev:remix": "remix watch",

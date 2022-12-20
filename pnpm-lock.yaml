@@ -4,7 +4,7 @@ specifiers:
   '@babel/core': ^7.18.5
   '@babel/preset-env': ^7.18.2
   '@babel/preset-react': ^7.17.12
-  '@cloudflare/kv-asset-handler': ^0.2.0
+  '@cloudflare/kv-asset-handler': ^0.3.0
   '@cloudflare/workers-types': ^4.20221111.1
   '@remix-run/cloudflare': ^1.6.0
   '@remix-run/cloudflare-pages': ^1.6.0
@@ -34,7 +34,7 @@ specifiers:
   wrangler: ^2.0.14
 
 dependencies:
-  '@cloudflare/kv-asset-handler': 0.2.0
+  '@cloudflare/kv-asset-handler': 0.3.0
   '@remix-run/cloudflare': 1.6.0_gcxgbrjhht2vqrprdtu7piso2u
   '@remix-run/cloudflare-pages': 1.6.0_gcxgbrjhht2vqrprdtu7piso2u
   '@remix-run/react': 1.6.0_biqbaboplfbrettd7655fr4n2y
@@ -1428,6 +1428,13 @@ packages:
     resolution: {integrity: sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==}
     dependencies:
       mime: 3.0.0
+    dev: true
+
+  /@cloudflare/kv-asset-handler/0.3.0:
+    resolution: {integrity: sha512-9CB/MKf/wdvbfkUdfrj+OkEwZ5b7rws0eogJ4293h+7b6KX5toPwym+VQKmILafNB9YiehqY0DlNrDcDhdWHSQ==}
+    dependencies:
+      mime: 3.0.0
+    dev: false
 
   /@cloudflare/workers-types/4.20221111.1:
     resolution: {integrity: sha512-BNV2wN8V6Zduvo7UzxcdjBbLQ906D2KhS804PDufLgx/sanGJCHVJMOIaLvS/b61JKtot1U7P/l1fjrjZ7/E3A==}

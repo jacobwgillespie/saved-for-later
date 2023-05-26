@@ -11,7 +11,7 @@ specifiers:
   '@remix-run/dev': ^1.6.0
   '@remix-run/eslint-config': ^1.6.0
   '@remix-run/react': ^1.6.0
-  '@types/node': ^16
+  '@types/node': ^20
   '@types/react': ^17.0.45
   '@types/react-dom': ^17.0.17
   autoprefixer: ^10.4.7
@@ -52,7 +52,7 @@ devDependencies:
   '@cloudflare/workers-types': 4.20221111.1
   '@remix-run/dev': 1.6.0_biqbaboplfbrettd7655fr4n2y
   '@remix-run/eslint-config': 1.6.0_izw5e3p4vwslnoiyuivbemjige
-  '@types/node': 16.11.36
+  '@types/node': 20.2.4
   '@types/react': 17.0.45
   '@types/react-dom': 17.0.17
   autoprefixer: 10.4.7_postcss@8.4.14
@@ -1934,7 +1934,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 16.11.41
+      '@types/node': 20.2.4
       '@types/responselike': 1.0.0
     dev: true
 
@@ -1961,7 +1961,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 16.11.41
+      '@types/node': 20.2.4
     dev: true
 
   /@types/hast/2.3.4:
@@ -1989,7 +1989,7 @@ packages:
   /@types/keyv/3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 16.11.41
+      '@types/node': 20.2.4
     dev: true
 
   /@types/mdast/3.0.10:
@@ -2014,12 +2014,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: true
 
-  /@types/node/16.11.36:
-    resolution: {integrity: sha512-FR5QJe+TaoZ2GsMHkjuwoNabr+UrJNRr2HNOo+r/7vhcuntM6Ee/pRPOnRhhL2XE9OOvX9VLEq+BcXl3VjNoWA==}
-    dev: true
-
-  /@types/node/16.11.41:
-    resolution: {integrity: sha512-mqoYK2TnVjdkGk8qXAVGc/x9nSaTpSrFaGFm43BUH3IdoBV0nta6hYaGmdOvIMlbHJbUEVen3gvwpwovAZKNdQ==}
+  /@types/node/20.2.4:
+    resolution: {integrity: sha512-ni5f8Xlf4PwnT/Z3f0HURc3ZSw8UyrqMqmM3L5ysa7VjHu8c3FOmIo1nKCcLrV/OAmtf3N4kFna/aJqxsfEtnA==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -2047,7 +2043,7 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 16.11.41
+      '@types/node': 20.2.4
     dev: true
 
   /@types/scheduler/0.16.2:

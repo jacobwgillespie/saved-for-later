@@ -27,7 +27,6 @@ interface FeedbinEntry {
   content: string
   url: string
   published: string
-  twitter_id: number | null
 }
 
 /** entryLoader loads full entries from Feedbin in chunks of 100 */

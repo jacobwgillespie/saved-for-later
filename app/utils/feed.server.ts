@@ -2,7 +2,6 @@ import {parseISO} from 'date-fns'
 import {Feed} from 'feed'
 import {fetchFeedbinEntries} from './feedbin.server'
 import {getKV} from './kv'
-import {fetchFavorites} from './twitter.server'
 
 export interface FeedItem {
   id: string
@@ -12,10 +11,6 @@ export interface FeedItem {
   content?: string
   hn: string | false
   lobsters: string | false
-  twitter?: {
-    link: string
-    username: string
-  }
 }
 
 export async function fetchFeedItems(context: any, refresh = false) {
@@ -24,9 +19,8 @@ export async function fetchFeedItems(context: any, refresh = false) {
   if (!refresh && existing) return existing
 
   const feedbinItems: Promise<FeedItem[]> = fetchFeedbinEntries()
-  const twitterItems: Promise<FeedItem[]> = fetchFavorites()
 
-  const items = (await Promise.all([feedbinItems, twitterItems])).flat()
+  const items = (await Promise.all([feedbinItems])).flat()
 
   // Sort entries in reverse chronological order
   const sortedItems = items.sort((a, b) => {

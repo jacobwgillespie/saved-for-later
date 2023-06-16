@@ -4,7 +4,7 @@
 
 ### What
 
-This linkblog represents items starred in my feed reader ([Feedbin](https://feedbin.com/)) or favorited on Twitter ([@jacobwgillespie](https://twitter.com/jacobwgillespie)). Links are displayed in reverse-chronological order. Special handling is taken for Hacker News links and Tweets, where the website will display a link to the HN discussion or original Twitter thread in addition to a link to the article or website being discussed.
+This linkblog represents items starred in my feed reader ([Feedbin](https://feedbin.com/)). Links are displayed in reverse-chronological order. Special handling is taken for Hacker News links, where the website will display a link to the HN discussion in addition to a link to the article or website being discussed.
 
 Additionally, the links are available as an RSS feed, allowing anyone the ability to subscribe to these links. The feed is available in three formats, [RSS 2.0](https://savedforlater.dev/rss), [Atom 1.0](https://savedforlater.dev/atom), and [JSON Feed 1.0](https://savedforlater.dev/json).
 
@@ -24,7 +24,7 @@ The purpose is two-fold. Firstly, _Saved for Later_ is useful to me as a destina
 
 _Saved for Later_ is powered by [Remix](https://remix.run/) and [Cloudflare Pages](https://pages.cloudflare.com/).
 
-Feed items are scraped directly from the Feedbin API and Twitter API and saved into a Cloudflare KV key, with a 15 minute expiration. Then every 5 minutes, a background cron job fetches the latest items and updates the key. In effect, this should mean that a visitor to the site should view the latest data, at most 5 minutes old.
+Feed items are scraped directly from the Feedbin API and saved into a Cloudflare KV key, with a 15 minute expiration. Then every 5 minutes, a background cron job fetches the latest items and updates the key. In effect, this should mean that a visitor to the site should view the latest data, at most 5 minutes old.
 
 ### Contributing
 

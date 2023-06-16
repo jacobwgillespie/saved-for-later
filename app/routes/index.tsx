@@ -109,11 +109,6 @@ const Item: React.FC<ItemProps> = ({item}) => {
           HN
         </a>
       )}
-      {item.twitter && (
-        <a href={item.twitter.link} target="_blank" rel="noreferrer" className="font-normal text-[#1da1f2]">
-          {item.twitter.username}
-        </a>
-      )}
       {item.lobsters && (
         <a href={item.lobsters} target="_blank" rel="noreferrer" className="font-normal text-[#c40000]">
           L

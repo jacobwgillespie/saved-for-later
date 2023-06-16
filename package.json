@@ -13,7 +13,7 @@
     "dev": "pnpm build && run-p dev:*",
     "dev:css": "tailwindcss -w -i styles/app.css -o app/styles/app.css",
     "dev:remix": "remix watch",
-    "dev:wrangler": "NODE_ENV=development node support/run-dev.cjs 'wrangler pages dev ./public --kv SAVEDFORLATER_DATA -b FEEDBIN_API_KEY=$FEEDBIN_API_KEY -b TWITTER_API_KEY=$TWITTER_API_KEY'",
+    "dev:wrangler": "NODE_ENV=development node support/run-dev.cjs 'wrangler pages dev ./public --kv SAVEDFORLATER_DATA -b FEEDBIN_API_KEY=$FEEDBIN_API_KEY'",
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",
     "lint": "eslint .",

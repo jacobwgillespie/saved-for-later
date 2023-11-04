@@ -41,7 +41,7 @@
     "@cloudflare/workers-types": "^4.20221111.1",
     "@remix-run/dev": "^1.6.0",
     "@remix-run/eslint-config": "^1.6.0",
-    "@types/node": "^16",
+    "@types/node": "^20",
     "@types/react": "^17.0.45",
     "@types/react-dom": "^17.0.17",
     "autoprefixer": "^10.4.7",

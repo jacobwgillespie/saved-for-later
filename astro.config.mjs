@@ -6,7 +6,7 @@ import {defineConfig} from 'astro/config'
 export default defineConfig({
   integrations: [tailwind()],
   output: 'server',
-  adapter: cloudflare({platformProxy: {enabled: true}}),
+  adapter: cloudflare({platformProxy: {enabled: true}, imageService: 'passthrough'}),
   vite: {
     resolve: {
       alias: {

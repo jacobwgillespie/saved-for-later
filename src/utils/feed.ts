@@ -1,4 +1,3 @@
-import {parseISO} from 'date-fns'
 import {Feed} from 'feed'
 import {fetchFeedbinEntries} from './feedbin'
 
@@ -6,7 +5,7 @@ export interface FeedItem {
   id: string
   title: string
   link: string
-  date: string
+  date: Date
   content?: string
   hn: string | false
   lobsters: string | false
@@ -52,7 +51,7 @@ export async function buildFeed(items: FeedItem[]) {
       title: item.title,
       guid: item.id,
       link: item.link,
-      date: parseISO(item.date),
+      date: item.date,
       content: item.content ?? '',
     })
   }

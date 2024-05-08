@@ -15,7 +15,7 @@ async function feedbin<APIResponse>(endpoint: string): Promise<APIResponse> {
   const response = await fetch(url, {
     headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`, Accept: 'application/json'},
   })
-  console.log({url, status: response.status, FEEDBIN_API_KEY})
+  console.log({url, status: response.status, FEEDBIN_API_KEY: `FEEDBIN_API_KEY: ${FEEDBIN_API_KEY}`})
   const body = await response.text()
   try {
     return JSON.parse(body)
@@ -47,6 +47,7 @@ const entryLoader = new DataLoader<number, FeedbinEntry>(
 /** Fetch Feedbin entries */
 export async function fetchFeedbinEntries(env: Env): Promise<FeedItem[]> {
   FEEDBIN_API_KEY = env.FEEDBIN_API_KEY
+  console.log('setting', {FEEDBIN_API_KEY: `FEEDBIN_API_KEY: ${FEEDBIN_API_KEY}`})
 
   // Fetch IDs of starred entries
   const entryIDs = await feedbin<number[]>('starred_entries.json')
@@ -83,18 +84,4 @@ export async function fetchFeedbinEntries(env: Env): Promise<FeedItem[]> {
       lobsters,
     }
   })
-}
-
-/** Fetch map of feed IDs to tags */
-export async function fetchTagMap() {
-  const tagMap: {[id: number]: string[]} = {}
-
-  const taggings = await feedbin<{feed_id: number; name: string}[]>('taggings.json')
-  for (const tagging of taggings) {
-    const tags = tagMap[tagging.feed_id] || []
-    tags.push(tagging.name)
-    tagMap[tagging.feed_id] = tags.sort()
-  }
-
-  return tagMap
 }

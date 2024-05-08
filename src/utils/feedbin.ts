@@ -15,15 +15,7 @@ async function feedbin<APIResponse>(endpoint: string): Promise<APIResponse> {
   const response = await fetch(url, {
     headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`, Accept: 'application/json'},
   })
-  console.log({url, status: response.status, FEEDBIN_API_KEY: `FEEDBIN_API_KEY: ${FEEDBIN_API_KEY}`})
-  const body = await response.text()
-  try {
-    return JSON.parse(body)
-  } catch (e) {
-    console.log(e)
-    console.log(body)
-    throw e
-  }
+  return await response.json()
 }
 
 /** Represents a starred entry in Feedbin */
@@ -47,7 +39,6 @@ const entryLoader = new DataLoader<number, FeedbinEntry>(
 /** Fetch Feedbin entries */
 export async function fetchFeedbinEntries(env: Env): Promise<FeedItem[]> {
   FEEDBIN_API_KEY = env.FEEDBIN_API_KEY
-  console.log('setting', {FEEDBIN_API_KEY: `FEEDBIN_API_KEY: ${FEEDBIN_API_KEY}`})
 
   // Fetch IDs of starred entries
   const entryIDs = await feedbin<number[]>('starred_entries.json')

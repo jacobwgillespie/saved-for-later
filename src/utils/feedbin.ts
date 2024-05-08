@@ -13,13 +13,14 @@ let FEEDBIN_API_KEY = ''
 async function feedbin<APIResponse>(endpoint: string): Promise<APIResponse> {
   const url = `https://api.feedbin.com/v2/${endpoint}`
   const response = await fetch(url, {
-    headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`},
+    headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`, Accept: 'application/json'},
   })
+  const body = await response.text()
   try {
-    return await response.json()
+    return JSON.parse(body)
   } catch (e) {
     console.log(e)
-    console.log(await response.text())
+    console.log(body)
     throw e
   }
 }

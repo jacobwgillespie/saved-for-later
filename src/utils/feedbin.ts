@@ -15,6 +15,7 @@ async function feedbin<APIResponse>(endpoint: string): Promise<APIResponse> {
   const response = await fetch(url, {
     headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`, Accept: 'application/json'},
   })
+  console.log({url, status: response.status, FEEDBIN_API_KEY})
   const body = await response.text()
   try {
     return JSON.parse(body)

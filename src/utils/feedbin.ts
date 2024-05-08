@@ -1,6 +1,5 @@
 import DataLoader from 'dataloader'
-import {FEEDBIN_API_KEY} from './env.server'
-import type {FeedItem} from './feed.server'
+import type {FeedItem} from './feed'
 
 /** ID of the Hacker News feed in Feedbin */
 const HACKER_NEWS_FEED_ID = 10102
@@ -8,8 +7,10 @@ const HACKER_NEWS_FEED_ID = 10102
 /** ID of the Lobste.rs feed in Feedbin */
 const LOBSTERS_NEWS_FEED_ID = 54548
 
+let FEEDBIN_API_KEY = ''
+
 /** Call the Feedbin API */
-async function feedbin<APIResponse = any>(endpoint: string): Promise<APIResponse> {
+async function feedbin<APIResponse>(endpoint: string): Promise<APIResponse> {
   const url = `https://api.feedbin.com/v2/${endpoint}`
   const response = await fetch(url, {
     headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`},
@@ -36,7 +37,9 @@ const entryLoader = new DataLoader<number, FeedbinEntry>(
 )
 
 /** Fetch Feedbin entries */
-export async function fetchFeedbinEntries(): Promise<FeedItem[]> {
+export async function fetchFeedbinEntries(env: Env): Promise<FeedItem[]> {
+  FEEDBIN_API_KEY = env.FEEDBIN_API_KEY
+
   // Fetch IDs of starred entries
   const entryIDs = await feedbin<number[]>('starred_entries.json')
 

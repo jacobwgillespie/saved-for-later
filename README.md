@@ -22,7 +22,7 @@ The purpose is two-fold. Firstly, _Saved for Later_ is useful to me as a destina
 
 ### How
 
-_Saved for Later_ is powered by [Remix](https://remix.run/) and [Cloudflare Pages](https://pages.cloudflare.com/).
+_Saved for Later_ is powered by [Astro](https://astro.build/) and [Cloudflare Pages](https://pages.cloudflare.com/).
 
 Feed items are scraped directly from the Feedbin API and saved into a Cloudflare KV key, with a 15 minute expiration. Then every 5 minutes, a background cron job fetches the latest items and updates the key. In effect, this should mean that a visitor to the site should view the latest data, at most 5 minutes old.
 

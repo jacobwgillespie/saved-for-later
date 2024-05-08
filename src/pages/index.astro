@@ -1,0 +1,53 @@
+---
+import Item from '../components/Item.astro'
+import {fetchFeedItems} from '../utils/feed'
+
+const items = await fetchFeedItems(Astro.locals.runtime.env, false)
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/icon-512x512.png" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Saved for Later</title>
+
+    <meta content="Saved for Later" property="og:title" />
+    <meta content="https://savedforlater.dev/" property="og:url" />
+    <meta content="Starred links from my feed reader." property="og:description" />
+    <link rel="alternate" type="application/rss+xml" title="Saved for Later RSS feed" href="/rss" />
+    <link rel="alternate" type="application/atom+xml" title="Saved for Later RSS feed" href="/atom" />
+    <link rel="alternate" type="application/json" title="Saved for Later RSS feed" href="/json" />
+  </head>
+  <body class="bg-stone-800 text-stone-100">
+    <div class="flex min-h-screen flex-col p-4 md:p-16 md:pb-8">
+      <div class="flex-1 space-y-4 font-light">
+        <h1 class="text-2xl leading-none md:text-4xl">Saved for Later</h1>
+
+        {items.map((item) => <Item item={item} />)}
+      </div>
+
+      <footer class="mt-4 space-x-4 border-t border-stone-700 pt-4 text-sm text-stone-400 md:mt-8 md:pt-8">
+        <span>
+          Copyright &copy; {new Date().getFullYear()}{' '}
+          <a class="hover:text-slate-50" href="https://jacobwgillespie.com" target="_blank" rel="noreferrer">
+            Jacob Gillespie
+          </a>
+        </span>
+        <a class="hover:text-slate-50" href="/rss">RSS</a>
+        <a class="hover:text-slate-50" href="/atom">Atom</a>
+        <a class="hover:text-slate-50" href="/json">JSON</a>
+        <a
+          class="hover:text-slate-50"
+          href="https://github.com/jacobwgillespie/saved-for-later"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Source
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>

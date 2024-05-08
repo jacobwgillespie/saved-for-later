@@ -1,0 +1,8 @@
+name = "saved-for-later"
+pages_build_output_dir = "./dist"
+compatibility_date = "2024-04-29"
+compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "SAVEDFORLATER_DATA"
+id = "4aadd82baecc43aeb142cffe59327a98"

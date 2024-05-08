@@ -8,8 +8,14 @@ export default defineConfig({
   output: 'server',
   adapter: cloudflare({platformProxy: {enabled: true}}),
   vite: {
+    resolve: {
+      alias: {
+        stream: 'node:stream',
+        string_decoder: 'node:string_decoder',
+      },
+    },
     ssr: {
-      external: ['stream', 'string_decoder'],
+      external: ['node:stream', 'node:string_decoder'],
     },
   },
 })

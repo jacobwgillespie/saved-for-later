@@ -1,7 +1,6 @@
 import {parseISO} from 'date-fns'
 import {Feed} from 'feed'
-import {fetchFeedbinEntries} from './feedbin.server'
-import {getKV} from './kv'
+import {fetchFeedbinEntries} from './feedbin'
 
 export interface FeedItem {
   id: string
@@ -13,12 +12,11 @@ export interface FeedItem {
   lobsters: string | false
 }
 
-export async function fetchFeedItems(context: any, refresh = false) {
-  const kv = getKV(context)
-  const existing = await kv.get<FeedItem[]>('feedItems', 'json')
+export async function fetchFeedItems(env: Env, refresh = false) {
+  const existing = await env.SAVEDFORLATER_DATA.get<FeedItem[]>('feedItems', 'json')
   if (!refresh && existing) return existing
 
-  const feedbinItems: Promise<FeedItem[]> = fetchFeedbinEntries()
+  const feedbinItems: Promise<FeedItem[]> = fetchFeedbinEntries(env)
 
   const items = (await Promise.all([feedbinItems])).flat()
 
@@ -30,7 +28,9 @@ export async function fetchFeedItems(context: any, refresh = false) {
   })
 
   // Cache items for 5 minutes
-  await kv.put('feedItems', JSON.stringify(sortedItems), {expirationTtl: 60 * 15})
+  await env.SAVEDFORLATER_DATA.put('feedItems', JSON.stringify(sortedItems), {
+    expirationTtl: 60 * 15,
+  })
 
   return sortedItems
 }
@@ -53,7 +53,7 @@ export async function buildFeed(items: FeedItem[]) {
       guid: item.id,
       link: item.link,
       date: parseISO(item.date),
-      content: item.content,
+      content: item.content ?? '',
     })
   }
 

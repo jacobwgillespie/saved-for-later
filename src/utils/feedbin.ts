@@ -15,7 +15,13 @@ async function feedbin<APIResponse>(endpoint: string): Promise<APIResponse> {
   const response = await fetch(url, {
     headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`},
   })
-  return response.json()
+  try {
+    return await response.json()
+  } catch (e) {
+    console.log(e)
+    console.log(await response.text())
+    throw e
+  }
 }
 
 /** Represents a starred entry in Feedbin */

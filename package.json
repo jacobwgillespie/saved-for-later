@@ -17,6 +17,7 @@
     "@astrojs/cloudflare": "^10.2.5",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@radix-ui/colors": "^3.0.0",
     "astro": "^4.7.1",
     "dataloader": "^2.2.2",
     "date-fns": "^3.6.0",

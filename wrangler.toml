@@ -1,2 +1,6 @@
+name = "saved-for-later"
 pages_build_output_dir = "./dist"
-kv_namespaces = [{ binding = "SAVEDFORLATER_DATA", id = "..." }]
+
+[[kv_namespaces]]
+binding = "SAVEDFORLATER_DATA"
+id = "4aadd82baecc43aeb142cffe59327a98"

@@ -7,6 +7,9 @@ export default defineConfig({
   integrations: [tailwind()],
   output: 'server',
   adapter: cloudflare({platformProxy: {enabled: true}, imageService: 'passthrough'}),
+  build: {
+    inlineStylesheets: 'always',
+  },
   vite: {
     resolve: {
       alias: {

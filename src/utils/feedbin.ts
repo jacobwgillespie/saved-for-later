@@ -13,9 +13,9 @@ let FEEDBIN_API_KEY = ''
 async function feedbin<APIResponse>(endpoint: string): Promise<APIResponse> {
   const url = `https://api.feedbin.com/v2/${endpoint}`
   const response = await fetch(url, {
-    headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`},
+    headers: {Authorization: `Basic ${FEEDBIN_API_KEY}`, Accept: 'application/json'},
   })
-  return response.json()
+  return await response.json()
 }
 
 /** Represents a starred entry in Feedbin */
@@ -75,18 +75,4 @@ export async function fetchFeedbinEntries(env: Env): Promise<FeedItem[]> {
       lobsters,
     }
   })
-}
-
-/** Fetch map of feed IDs to tags */
-export async function fetchTagMap() {
-  const tagMap: {[id: number]: string[]} = {}
-
-  const taggings = await feedbin<{feed_id: number; name: string}[]>('taggings.json')
-  for (const tagging of taggings) {
-    const tags = tagMap[tagging.feed_id] || []
-    tags.push(tagging.name)
-    tagMap[tagging.feed_id] = tags.sort()
-  }
-
-  return tagMap
 }

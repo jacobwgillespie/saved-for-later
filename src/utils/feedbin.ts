@@ -1,5 +1,4 @@
 import DataLoader from 'dataloader'
-import {parseISO} from 'date-fns'
 import type {FeedItem} from './feed'
 
 /** ID of the Hacker News feed in Feedbin */
@@ -70,7 +69,7 @@ export async function fetchFeedbinEntries(env: Env): Promise<FeedItem[]> {
       id: `https://feedbin.me/entries/${entry.id}`,
       title: entry.title,
       link: entry.url,
-      date: parseISO(entry.published),
+      date: entry.published,
       content: entry.content,
       hn,
       lobsters,

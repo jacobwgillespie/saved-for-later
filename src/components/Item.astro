@@ -11,27 +11,28 @@ const timeAgo = `${formatDistanceToNow(parseISO(item.date))} ago`
 ---
 
 <div class="flex flex-col items-baseline gap-1 leading-none md:flex-row">
-  <a
-    href={item.link}
-    class="overflow-hidden overflow-ellipsis text-lg visited:text-stone-500 md:whitespace-nowrap"
-  >
+  <a href={item.link} class="overflow-hidden overflow-ellipsis text-lg visited:text-stone-500 md:whitespace-nowrap">
     {item.title}
   </a>
-  {item.hn && (
-    <a
-      href={`https://news.ycombinator.com/item?id=${item.hn}`}
-      target="_blank"
-      rel="noreferrer"
-      class="font-normal text-[#f60]"
-    >
-      HN
-    </a>
-  )}
-  {item.lobsters && (
-    <a href={item.lobsters} target="_blank" rel="noreferrer" class="font-normal text-[#c40000]">
-      L
-    </a>
-  )}
+  {
+    item.hn && (
+      <a
+        href={`https://news.ycombinator.com/item?id=${item.hn}`}
+        target="_blank"
+        rel="noreferrer"
+        class="font-normal text-[#f60]"
+      >
+        HN
+      </a>
+    )
+  }
+  {
+    item.lobsters && (
+      <a href={item.lobsters} target="_blank" rel="noreferrer" class="font-normal text-[#c40000]">
+        L
+      </a>
+    )
+  }
   <time datetime={item.date} title={item.date} class="whitespace-nowrap text-sm text-stone-500">
     {timeAgo}
   </time>

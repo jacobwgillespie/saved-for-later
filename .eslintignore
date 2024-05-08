@@ -1,9 +1,0 @@
-/.cache
-/.mf
-/build
-/public
-/node_modules
-/app/styles/app.css
-
-/functions/\[\[path\]\].js
-/functions/\[\[path\]\].js.map

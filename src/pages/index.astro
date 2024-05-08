@@ -26,9 +26,7 @@ const items = await fetchFeedItems(Astro.locals.runtime.env, false)
       <div class="flex-1 space-y-4 font-light">
         <h1 class="text-2xl leading-none md:text-4xl">Saved for Later</h1>
 
-        {items.map((item) => (
-          <Item item={item} />
-        ))}
+        {items.map((item) => <Item item={item} />)}
       </div>
 
       <footer class="mt-4 space-x-4 border-t border-stone-700 pt-4 text-sm text-stone-400 md:mt-8 md:pt-8">
@@ -38,15 +36,9 @@ const items = await fetchFeedItems(Astro.locals.runtime.env, false)
             Jacob Gillespie
           </a>
         </span>
-        <a class="hover:text-slate-50" href="/rss">
-          RSS
-        </a>
-        <a class="hover:text-slate-50" href="/atom">
-          Atom
-        </a>
-        <a class="hover:text-slate-50" href="/json">
-          JSON
-        </a>
+        <a class="hover:text-slate-50" href="/rss">RSS</a>
+        <a class="hover:text-slate-50" href="/atom">Atom</a>
+        <a class="hover:text-slate-50" href="/json">JSON</a>
         <a
           class="hover:text-slate-50"
           href="https://github.com/jacobwgillespie/saved-for-later"

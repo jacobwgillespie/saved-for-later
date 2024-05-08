@@ -8,8 +8,6 @@
     "dev": "astro dev",
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
     "preview": "astro preview",
     "start": "astro dev",
     "type-check": "tsc --noEmit"
@@ -46,6 +44,14 @@
       "prettier-plugin-pkg",
       "prettier-plugin-organize-imports",
       "prettier-plugin-tailwindcss"
+    ],
+    "overrides": [
+      {
+        "files": "*.astro",
+        "options": {
+          "parser": "astro"
+        }
+      }
     ]
   }
 }

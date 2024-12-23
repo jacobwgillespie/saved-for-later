@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.1.0",
+  "packageManager": "pnpm@9.15.1",
   "scripts": {
     "build": "astro check && astro build",
     "clean": "rm -rf .cache app/styles/app.css build public/build",
@@ -13,26 +13,26 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@astrojs/check": "^0.6.0",
-    "@astrojs/cloudflare": "^10.2.5",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.1.0",
+    "@astrojs/rss": "^4.0.10",
+    "@astrojs/tailwind": "^5.1.4",
     "@radix-ui/colors": "^3.0.0",
-    "astro": "^4.7.1",
-    "dataloader": "^2.2.2",
-    "date-fns": "^3.6.0",
+    "astro": "^5.1.1",
+    "dataloader": "^2.2.3",
+    "date-fns": "^4.1.0",
     "feed": "^4.2.2",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240502.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-organize-imports": "^3.2.4",
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-pkg": "^0.18.1",
-    "prettier-plugin-tailwindcss": "^0.5.14",
-    "wrangler": "^3.53.1"
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "wrangler": "^3.99.0"
   },
   "prettier": {
     "bracketSpacing": false,
